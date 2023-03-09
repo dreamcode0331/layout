@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,table,th,td,form,fieldset,legend,textarea,input,select,textarea,button,article,aside,dialog,footer,header,section,footer,nav,figure,main{margin:0;padding:0}
+article,aside,dialog,footer,header,section,footer,nav,figure,main{display:block}
+html,body{height:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust:none}
+body,input,select,textarea,button{font-family:'나눔고딕',NanumGothic,'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Helvetica;font-size:12px;color:#333;line-height:1.2}
+fieldset,li,img{border:0;vertical-align:top}
+ul,ol{list-style:none}
+button{overflow:visible;border:0;background-color:transparent;cursor:pointer}
+button::-moz-focus-inner{padding:0;border:0}
+address,caption,em{font-style:normal}
+a,a:focus,a:active,a:hover{color:#000;text-decoration:none}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:none}
+.blind,caption span,legend{overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:1px;line-height:100px;white-space:nowrap}
+.clearfix::after{display:block;clear: both;content:"";}
+
+html{font-size:62.5%}
+body{padding:0 24px}
+h1{padding:80px 0 5px;border-bottom:1px solid #333;font-size:19px}
+h2{clear:both;margin-top:40px;padding-bottom:5px;font-size:16px}
+.container{margin:0 auto;padding-bottom:500px;width:100%;max-width:1024px}
+.intro,.desc{margin:10px 0}
+.text{margin-top:7px;font-size:16px;line-height:1.5}
+code{display:block;padding:5px 10px;background:#222;font-size:16px;color:#fff}
+.annotation{font-size:14px;color:#7ead69}
+.img_wrap{margin-top:30px}
+.img_wrap img{max-width:100%}
+
+/* layout 공통 */
+.layout .box_wrap{background:#e6e6e6;font-size:0}
+.layout .box{display:inline-block}
+.layout .box.left{width:340px;vertical-align:top}
+.layout .box.right{width:calc(100% - 340px)}
+
+/* box 공통 */
+.box_wrap{margin:0 auto;width:100%;max-width:1024px}
+.box_wrap img{max-width:100%}
+.box{position:relative;padding:20px;box-sizing:border-box}
+.box span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:26px}
+.box.left{background:rgba(198,123,220,0.9)}
+.box.right{background:rgba(198,123,220,0.5)}
+.box .text_multi{font-size:16px;color:#a745c4;word-break:break-all}
+
+/* ex_layout */
+.ex_layout .box_wrap{font-size:0}
+.ex_layout .box_wrap img{max-width:100%}
+.ex_layout .box{display:inline-block;position:relative;height:340px}
+.ex_layout .box span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:bold}
+.ex_layout .box.left{width:340px;border-right:0}
+.ex_layout .box.right{width:calc(100% - 340px)}
+
+/* layout_02 */
+.layout_02 .box_wrap .box{height: 100%;min-height:340px}
+
+/* layout_03 */
+.layout_03 .desc{overflow:auto;background:#222;white-space:nowrap}
+
+@media screen and (max-width:1024px) {
+  body{padding:0}
+  h1{padding:8rem 0 0.5rem;font-size:1.9rem}
+  h2{clear:both;margin-top:4rem;padding-bottom:0.5rem;font-size:1.6rem}
+  .container{padding-right:1.5rem;padding-bottom:50rem;padding-left:1.5rem;width:inherit;min-width:320px}
+  .intro,.desc{margin:1rem 0}
+  .text{margin-top:0.7rem;font-size:1.6rem}
+  code{padding:0.5rem 1rem;font-size:1.6rem}
+  .annotation{font-size:1.4rem}
+  /* box 공통 */
+  .box{padding:1rem}
+  .box span{font-size:1.6rem;font-weight:bold}
+  .box .text_multi{font-size:1.5rem}
+
+  /* layout 공통 */
+  .layout .box.left{width:34rem}
+  .layout .box.right{width:calc(100% - 34rem)}
+
+  /* ex_layout */
+  .ex_layout .box{height:34rem}
+  .ex_layout .box span{width:100%;font-size:1.6rem;text-align:center}
+  .ex_layout .box.left{width:34rem}
+  .ex_layout .box.right{width:calc(100% - 34rem)}
+}
+@media screen and (max-width:768px) {
+  html{font-size:52.5%}
+  /* layout 공통 */
+  .layout .box.left{width:15rem}
+  .layout .box.right{width:calc(100% - 15rem)}
+  /* ex_layout */
+  .ex_layout .box.left{width:15rem}
+  .ex_layout .box.right{width:calc(100% - 15rem)}
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/07_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/01_layout.html" class="link">STEP 01</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/02_layout.html" class="link">STEP 02</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/03_layout.html" class="link">STEP 03</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/04_layout.html" class="link">STEP 04</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/05_layout.html" class="link">STEP 05</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/06_layout.html" class="link">STEP 06</a></li>
+          <li class="menu is_active"><a href="#" class="link">STEP 07</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2 class="blind">1주차 Layout Step 7</h2>
+      <div class="inner">
+        <h3>width_유동 / 여백_고정 10px / 개수를 줄이면 자동으로 width값 조정하기</h3>
+        <!-- input radio -->
+        <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+            <label for="rdo1">inline-block</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+            <label for="rdo2">table</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+            <label for="rdo3">position</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+            <label for="rdo4">flex</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+            <label for="rdo5">grid</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+            <label for="rdo6">float</label>
+          </div>
+        </div>
+        <!-- input radio -->
+        <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo7" name="rdo_02" class="input_rdo blind" checked>
+            <label for="rdo7">박스가 3개일 경우</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo8" name="rdo_02" class="input_rdo blind">
+            <label for="rdo8">박스가 2개일 경우</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo9" name="rdo_02" class="input_rdo blind">
+            <label for="rdo9">박스가 1개일 경우</label>
+          </div>
+        </div>
+        <ul class="layout_list layout_list_step_07">
+          <!-- inlne-block -->
+          <li class="layout layout_01">
+            <div class="box_wrap layout_inline_block">
+              <div class="box left"><span>inline-block<br>BOX 1</span></div>
+              <div class="box center"><span>inline-block<br>BOX 2</span></div>
+              <div class="box right"><span>inline-block<br>BOX 3</span></div>
+            </div>
+          </li>
+          <!-- table -->
+          <li class="layout layout_02">
+            <div class="box_wrap layout_table">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1</span></div></div>
+              <div class="box center"><div class="positioning_box"><span>table<br>BOX 2</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 3</span></div></div>
+            </div>
+          </li>
+          <!-- position -->
+          <li class="layout layout_03">
+            <div class="box_wrap layout_position">
+              <div class="box left"><span>position<br>BOX 1</span></div>
+              <div class="box center"><span>position<br>BOX 2</span></div>
+              <div class="box right"><span>position<br>BOX 3</span></div>
+            </div>
+          </li>
+          <!-- flex -->
+          <li class="layout layout_04">
+            <div class="box_wrap layout_flex">
+              <div class="box left"><span>flex<br>BOX 1</span></div>
+              <div class="box center"><span>flex<br>BOX 2</span></div>
+              <div class="box right"><span>flex<br>BOX 3</span></div>
+            </div>
+          </li>
+          <!-- grid -->
+          <li class="layout layout_05">
+            <div class="box_wrap layout_grid">
+              <div class="box left"><span>grid<br>BOX 1</span></div>
+              <div class="box center"><span>grid<br>BOX 2</span></div>
+              <div class="box right"><span>grid<br>BOX 3</span></div>
+            </div>
+          </li>
+          <!-- float -->
+          <li class="layout layout_06">
+            <div class="box_wrap layout_float">
+              <div class="box left"><span>float<br>BOX 1</span></div>
+              <div class="box center"><span>float<br>BOX 2</span></div>
+              <div class="box right"><span>float<br>BOX 3</span></div>
+            </div>
+          </li>
+        </ul> 
+        <div class="desc">
+          <p><b>- 갯수를 줄이면 자동으로 width값이 조정되는 속성 :</b> <span class="working">table</span><span class="working">flex</span><span class="working">grid</span></p>
+          <p>&nbsp;&nbsp;&nbsp;ㄴ IE에서는 grid의 auto-fit 기능은 지원하지 않기때문에 박스의 갯수가 줄어들어도 자동으로 width값 조정이 되지 않는다.</p>
+          <p><b>- 갯수를 줄이면 자동으로 width값이 조정되지 않는 속성 :</b> <span class="not_working">inline-block</span><span class="not_working">position</span><span class="not_working">flex</span></p>
+          <p>&nbsp;&nbsp;&nbsp;ㄴ 해당 속성들은 미디어쿼리나 스크립트로 제어해서 width값을 조정해야할 필요가 있다.</p><br>
+        </div> 
+      </div>  
+    </section>
+  </div> 
+  <script>
+    // input[name="rdo_01"] 클릭했을 때,
+    $(".layout").hide();
+    $(".layout").eq(0).show();
+    $('input[name="rdo_01"]').click(function(){
+      var rdo01Index = $(this).parents(".rdo_box").index();
+      $(".layout").hide();
+      $(".layout").eq(rdo01Index).show();
+    });
+    
+    // input[name="rdo_02"] 클릭했을 때,
+    $('input[name="rdo_02"]').click(function(){
+      var rdo02Index = $(this).parents(".rdo_box").index();
+      var layoutInlineBlock = $(".layout_inline_block .box");
+      if(rdo02Index == 0){ // input[name="rdo_02"] 버튼 인덱스값이 0일 때,
+        $(".box").hide();
+        $(".box").show();
+      }else if(rdo02Index == 1){ // input[name="rdo_02"] 버튼 인덱스값이 1일 때,
+        $(".box").hide();
+        $(".box.left").show();
+        $(".box.center").show();
+      } else if(rdo02Index == 2){ // input[name="rdo_02"] 버튼 인덱스값이 2일 때,
+        $(".box").hide();
+        $(".box.left").show();
+      }
+    });
+  </script> 
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/03_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/01_layout.html" class="link">STEP 01</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/02_layout.html" class="link">STEP 02</a></li>
+          <li class="menu is_active"><a href="#" class="link">STEP 03</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/04_layout.html" class="link">STEP 04</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/05_layout.html" class="link">STEP 05</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/06_layout.html" class="link">STEP 06</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/07_layout.html" class="link">STEP 07</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2 class="blind">1주차 Layout Step 3</h2>
+      <div class="inner">
+        <div class="ex_layout">
+          <h3>👋STEP 3 레이아웃 예시👋</h3>
+          <div class="box_wrap">
+            <div class="box left"><span>width 고정<br>height 유동 </span></div>
+            <div class="box right"><span>width 유동<br>height 유동</span></div>
+          </div>
+          <div class="memo">
+            <p>두 block box의 height가 컨텐츠의 양에 따라 함게 늘어남</p>
+          </div>
+        </div>
+        <!-- input radio -->
+        <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+            <label for="rdo1">inline-block</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+            <label for="rdo2">table</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+            <label for="rdo3">position</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+            <label for="rdo4">flex</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+            <label for="rdo5">grid</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+            <label for="rdo6">float</label>
+          </div>
+        </div>
+        <ul class="layout_list layout_list_step_03">
+          <!-- inline-block -->
+          <li class="layout layout_01">
+            <h3>1. inline-block</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">inline-block</th>
+                <td>
+                  inline과 block의 특성을 모두 지니고 있는 inlne-block은 inline 요소처럼 컨텐츠 만큼의 크기를 차지하여 나란히 배치되거나 block 요소처럼 사용가능한 전체 너비를 차지하며 한 줄 전체의 영역에 배치된다. 
+                </td>
+                <td>
+                  - display: inline-block<br> 
+                  - width: calc(100% - 340px)<br> 
+                  - vertical-align:top
+                </td>
+                <td>
+                  <strong>■ display: inline-block</strong><br>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능<br>
+                  FIrefox(ver.2) partial support with prefix (-moz-)<br>
+                  IE(ver.6-7) partial support<br>
+                  <a href="https://caniuse.com/?search=inline-block" class="link" target="_blank">지원브라우저 보러가기</a> 
+                  <strong>■ clac()</strong><br>
+                  다음을 제외한 대부분의 공식 최신브라우저에서 호환<br>
+                  IE(ver.9-11) partial support<br>
+                  Opera Mini not supported
+                  <a href="https://caniuse.com/?search=calc" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>양 쪽 박스안에 텍스트 컨텐츠를 삽입 시켜보았다. 화면이 줄어들었을 때, box 2의 텍스트가 레이아웃을 벗어나게 된다.</p>  
+              <p>.box에 적용되어 있는 height값을 100% 변경하고 min-height: 340px을 적용</p>
+              <code>.layout_01 .box_wrap_02 .box { height: 100%; min-height: 340px }</code>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p> - 수정 전</p>
+              <p>box 1의 높이값이 텍스트 컨텐츠 양에 따라 줄어들었다. 화면이 줄어들었을 때 좌, 우 박스 모두 유동적인 높이값이 적용되어야하는데 컨텐츠 양이 많은 box 2의 높이값을 box 1이 따라가지 못한다.</p> 
+              <p style="color:red;text-decoration:line-through">inline-block에서는 방법을 찾지 못하겠습니다 ㅠㅠ (다음 방법으로 넘어가겠습니다)</p> 
+              <p> - 수정 후</p>
+              <p>제이쿼리 window resize 함수를 사용하여 박스 1의 높이값이 박스 2에 맞춰지도록 적용해 보았습니다. <a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/03_layout_02.html" target="_balank" class="working">보러가기</a></p>
+            </div>
+          </li>
+          <!-- table -->
+          <li class="layout layout_02">
+            <h3>2. table</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">table</th>
+                <td>
+                  display: table 속성은 다수의 아이템을 일정하게 정렬하려고 할 때 많이사용되는 방법으로 요소에 table의 성질을 갖게한다.<br><br>
+                  - [부모요소] diplay: table 로 선언함과 동시에 너비를 잡아주고<br> 
+                  - [자식요소] display: table-cell을 선언하여 table의 td 요소처럼 작동하게 한다. 
+                </td>
+                <td>
+                  - display: table<br> 
+                  - display: table-cell<br> 
+                  - min-width
+                </td>
+                <td>
+                  <strong>■ display: table</strong><br>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능<br>
+                  FIrefox(ver.2) partial support <br>
+                  IE(ver.6-7) not supported
+                  <a href="https://caniuse.com/?search=table" class="link" target="_blank">지원브라우저 보러가기</a> 
+                  <strong>■ min-width</strong><br>
+                  예제에서 사용한 속성은 모든 브라우저 지원 가능하나 auto, stretch, fit-content, max-content, min-content, fit-content 는 부분적 지원또는 지원불가한 경우도 있으니 확인해야함.
+                  <a href="https://caniuse.com/?search=min-width" class="link" target="_blank">지원브라우저 보러가기</a>
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left">
+                <!-- .positioning_box ie용 -->
+                <div class="positioning_box">
+                  <span>table<br>BOX 1</span>
+                  <p class="text_multi">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                  </p>
+                </div>
+              </div>
+              <div class="box right">
+                <!-- .positioning_box ie용 -->
+                <div class="positioning_box">
+                  <span>table<br>BOX 2</span>
+                  <p class="text_multi">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- position -->
+          <li class="layout layout_03">
+            <h3>3. position</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">position</th>
+                <td>
+                  position 속성은 HTML 요소가 위치를 결정하는 다음의 4가지 방식을 설정한다.<br>
+                  - <b>static position(정적위치)</b> : HTML요소의 위치를 결정하는 가장 기본적인 방식으로 top, right, bottom, left 속성값에 영향을 받지 않음. 단순히 웹 페이지의 흐름에 따라 차례대로 요소들을 위치시킨다<br>
+                  - <b>relative position(상대위치)</b> : HTML요소의 기본 위치 기준으로 위치 설정<br>
+                  - <b>fixed position(고정위치)</b> : 뷰포트(viewport)를 기준으로 위치를 설정<br>
+                  - <b>absolute position(절대위치)</b> : 고정위치가 뷰포트를 기준으로 위치를 결정하는 것과 비슷하게 동작하나, 단지 뷰포트(viewport)를 기준으로 하는 것이 아닌 위치가 설정된 부모요소를 기준으로 위치를 설정
+                  
+                </td>
+                <td>
+                  - position: relative<br> 
+                  - position: absolute<br> 
+                  - left: 0<br> 
+                  - right: 0<br> 
+                  - width: calc(100% - 340px)
+                </td>
+                <td>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능하다.<br>
+                  - Opera Mobile(ver.12-12.1) not supported<br>
+                  <a href="https://caniuse.com/?search=position" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>position으로 양쪽 박스 모두 유동적인 높이값을 갖게하기에는 어려움이 있습니다. </p>
+            </div>
+          </li>
+          <!-- flex -->
+          <li class="layout layout_04">
+            <h3>4. flex</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">flex</th>
+                <td>
+                  flexible box는 flex box라고도 불리며, CSS3에서 처음 소개된 레이아웃 모델로써 서로 다른 크기의 화면과 기기에서도 HTML 요소들이 자동으로 재정렬되어, 웹 페이지의 레이아웃을 언제나 똑같이 유지할 수 있도록 함<br><br>
+                  - <b>flex box를 위해 제공되는 속성</b>은 display, flex-direction, justify-content, align-items, flex-wrap, flex-flow, align-content<br>
+                  - <b>flex item을 위해 제공되는 속성</b>은 order, align-self, flex
+                </td>
+                <td>
+                  - display: flex<br>
+                  - flex-basis
+                </td>
+                <td>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 IE(ver.10 / 11)에서는 부분적으로 지원 가능하다.<br>
+                  - IE(ver.11) partial support<br>
+                  - IE(ver.10) partial support with prefix (-ms-)<br>
+                  <a href="https://caniuse.com/?search=flex" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>box 1, 2의 너비값을 flex-basis로 적용. 굳이 height값이 없어도 컨텐츠 내용에 따라 높이값이 유동적으로 움직임</p>
+            </div>
+          </li>
+          <!-- grid -->
+          <li class="layout layout_05">
+            <h3>5. grid</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">grid</th>
+                <td>
+                  grid는 2차원(행과 열)의 레이아웃 시스템을 제공 함. flexible box는 1차원 레이아웃을 위한 속성이지만 grid는 좀 더 복잡한 레이아웃을 위해 사용 가능.<br>
+                  flex와 마찬가지로 아이템을 감싸는 부모요소(컨테이너) 안에서 아이템을 배치 할 수 있다.<br><br>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" class="link" target="_blank">MDN WEB DOCS 보러가기</a> 
+                  <a href="https://heropy.blog/2019/08/17/css-grid/" class="link" target="_blank">HEROPY Tech의 css grid 완벽가이드</a> 
+                </td>
+                <td>
+                  - display: grid<br>
+                  - grid-template<br> 
+                </td>
+                <td>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 그 이하 버전에서는 부분적 지원이나 지원 불가의 경우도 많으므로 사전에 호환여부를 파악해야 함 
+                  웹 IE(ver.10 / 11)에서는 부분적으로 지원 가능하며 모바일 Opera Mini는 지원불가<br>
+                  <strong>■ display: grid</strong><br>
+                  - IE(ver.11) partial support with prefix (-ms-)<br>
+                  - IE(ver.10) partial support with prefix (-ms-)<br>
+                  - Opera Mini not support<br>
+                  - Opera Mobile(ver.12-12.1) not support<br>
+                  - Android Browser(ver.2.1-4.4.4) not support<br>
+
+                  <strong>■ grid-template</strong><br>
+                  - IE(ver.6-10) not support<br>
+                  - IE(ver.11) not support<br>
+                  <a href="https://caniuse.com/?search=grid" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+          </li>
+          <!-- float -->
+          <li class="layout layout_06">
+            <h3>6. float</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">float</th>
+                <td>
+                  float 속성은 원래 이미지와 텍스트 배치 용도로 등장했지만, 요즘에는 레이아웃용으로 많이 사용하고 있음.<br><br>
+                  - <b>inherit</b> : 부모 요소에서 상속<br>
+                  - <b>left</b> : 왼쪽에 부유하는 블록 박스를 생성. 페이지 내용은 박스 오른쪽에 위치하며 위에서 아래로 흐름.<br>
+                  - <b>right</b> : 오른쪽에 부유하는 블록 박스를 생성. 페이지 내용은 박스 왼쪽에 위치하며 위에서 아래로 흐름. 이후 요소에 clear 속성이 있으면 페이지 흐름이 달라짐. none 이 아니라면 display 속성은 무시된다.<br>
+                  - <b>none</b> : 요소를 부유시키지 않음<br>
+                </td>
+                <td>
+                  - float: left<br> 
+                  - clear: both<br> 
+                  - width: calc(100% - 340px)
+                </td>
+                <td>
+                  다음의 경우를 제외하고 대부분의 공식 최신브라우저에서 호환되고 있다<br>
+                  - Android Browser(ver.2.1-4.3) not support<br>
+                  <a href="https://caniuse.com/?search=float" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap clearfix">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>float으로 배치했을 때 가로값의 가변길이는 적용 가능하나 양쪽 높이가 유동적으로 움직이지 않는 문제점이 있다.</p>
+            </div>
+          </li>
+          <!-- float & position -->
+          <li class="layout layout_07">
+            <h3>7. float & position</h3>
+            <p>위 예제에서 살펴보았듯이 float 이나 position 의 고유 속성만으로 유동적인 높이값을 갖게하는건 어려워보였다. 하지만 두 가지 속성을 함께 적용한다면 가능!</p><br>
+            <div class="box_wrap clearfix">
+              <div class="box left">
+                <span>BOX 1</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+              <div class="box right">
+                <span>BOX 2</span>
+                <p class="text_multi">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="desc">
+              <p>.box.right의 텍스트의 양이 .box.left의 텍스트의 양보다 많아 float으로 배치했을 때 box의 높이값이 서로 달라진다.
+                양쪽의 높이값을 같게 하여 유동적인 높이값을 유지하기위해 다음과 같은 방법을 사용해 보았다.</p><br>
+              <p>  
+                - .box.right / .box.left 를 float으로 배치했을 때,<br>
+                - .box.right --> 컨텐츠의 양에 따라 가변적인 높이가 적용된다.<br> 
+                - .box.left  --> float:right의 컨텐츠 양에 따른 높이값을 갖지 못하므로 박스의 높이가 서로 달라지게 된다.<br><br>
+            
+                - .box.right 은 float / .box.left 은 position으로 배치했을 때,<br>
+                - .box.right --> float으로 배치하여 가변적인 너비에 대응하여 유동적인 높이값을 갖게하고<br>
+                - .box.left  --> position:absolute 적용 후 height:100% 하여 .box.right과 동일하게 레이아웃을 표현한다.
+              </p>  
+            </div>
+          </li>
+        </ul> 
+      </div>
+    </section>
+  </div>  
+  <script>
+    // input[name="rdo_01"] 클릭했을 때,
+    $(".layout").hide();
+    $(".layout").eq(0).show();
+    $('input[name="rdo_01"]').click(function(){
+      var rdo01Index = $(this).parents(".rdo_box").index();
+      console.log("rdo01Index : " + rdo01Index)
+      $(".layout").hide();
+      $(".layout").eq(rdo01Index).show();
+    });
+
+    // inline-block .box_wrap_02 높이 맞추기
+
+    /* *** element's(요소)의 크기 값에 영향을 미치는 구성방식
+
+    1.element의 높이(height)를 측정하는 방법
+
+    height() : 내부높이 - padding까지 제외한 순수하게 요소의 내부 크기만을 측정
+    innerHeight() : 내부높이 + padding - padding을 포함한 내부 크기를 측정
+    outerHeight() : 내부높이 + padding + border - padding을 포함한 내부 크기와 border크기까지 측정
+    outerHeight(true) : 내부높이 + padding + border + margin - 위 3개의 구성을 모두 포함한 크기를 측정 
+    
+    2.element의 너비(widht)를 측정하는 방법
+    width() : 내부너비 - padding까지 제외한 순수하게 요소의 내부 크기만을 측정
+    innerWidth() : 내부너비 + padding - padding을 포함한 내부 크기를 측정
+    outerWidth() : 내부너비 + padding + border - padding을 포함한 내부 크기와 border크기까지 측정
+    outerWidth(true) : 내부너비 + padding + border + margin - 위 3개의 구성을 모두 포함한 크기를 측정 
+    */    
+
+    // 전역변수
+    var boxW = $('.layout_01 .box_wrap_02').innerWidth(); // 박스 1, 2를 감싸고 있는 부모요소의 너비값 : 1024px
+    var boxH = $('.layout_01 .box_wrap_02').innerHeight(); // 박스 1, 2를 감싸고 있는 부모요소의 높이값 : 340px
+    var leftH = $('.layout_01 .box_wrap_02 .box.left').innerHeight(); // 박스 1의 높이값 
+    var righth = $('.layout_01 .box_wrap_02 .box.right').innerHeight(); // 박스 2의 높이값 
+    var temp = 0; // 빈 값
+    var temp = boxH - leftH; // 부모요소 높이값 - 박스 1 높이값
+    var temp2 = temp + leftH; // 박스2 높이값 = temp + 박스 1 높이값
+    $('.layout_01 .box_wrap_02 .box.left').css('height',temp2);
+    $(window).resize(function () {
+        // 지역변수
+        var boxW = $('.layout_01 .box_wrap_02').innerWidth(); // 박스 1, 2를 감싸고 있는 부모요소의 너비값 : 1024px
+        var boxH = $('.layout_01 .box_wrap_02').innerHeight(); // 박스 1, 2를 감싸고 있는 부모요소의 높이값 : 340px
+        var leftH = $('.layout_01 .box_wrap_02 .box.left').innerHeight(); // 박스 1의 높이값 
+        var righth = $('.layout_01 .box_wrap_02 .box.right').innerHeight(); // 박스 2의 높이값 
+        var temp = 0; // 빈 값
+        var temp = boxH - leftH; // 부모요소 높이값 - 박스 1 높이값
+        var temp2 = temp + leftH; // 박스2 높이값 = temp + 박스 1 높이값
+
+        console.log("박스 1, 2를 감싸고 있는 부모요소의 너비값 : " + boxW);
+        console.log("박스 1, 2를 감싸고 있는 부모요소의 높이값 : " + boxH);
+        console.log("박스 1의 높이값 : " + leftH);
+        console.log("박스 2의 높이값 : " + righth);
+        console.log("부모요소 높이값 - 박스 1 높이값 : " + temp);
+        console.log("박스2 높이값 = temp + 박스 1 높이값 : " + temp2);
+
+      setTimeout(function(){ // resize 될 때 반응 속도 (10 밀리초 = 0.01 초)
+        /* *** AND 연산자
+          MDN 참조 링크 : 
+          https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Bitwise_AND
+          https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Logical_AND
+          &  : 첫번째, 두번째 두 조건을 무조건 검사.첫번째 조건이 false 라도 두번째  조건을 무조건 검사함.
+          && : 
+            피연산자를 왼쪽에서 오른쪽으로 평가. 
+            첫번째 조건이 true일때만 검사. 
+            두 조건이 모두 true 이어야 함. 
+            첫번째 조건이 false이면 두번째 조건을 검사하지 않음. 
+            처음 만나는 조건이 false라면 해당 값을 반환하며 모두 true라면 마지막 피연산자의 값을 반환한다.
+        */
+        
+        if(boxW < 1024 && leftH < righth) { // 부모박스 너비값이 1024보다 작고 && 박스 1의 높이값이 박스 2의 높이값 보다 작다면
+          $('.layout_01 .box_wrap_02 .box.left').css('height',temp2); // box 1의 높이값을 temp2로 적용
+        } else if((leftH >= righth)) { // 박스 1의 높이값이 박스 2의 높이값보다 크거나 같다면
+          $('.layout_01 .box_wrap_02 .box.left').css('height',righth); // box 1의 높이값을 박스 2로 적용
+        } 
+      }, 10);
+    });
+  </script>
+</body>
+</html>

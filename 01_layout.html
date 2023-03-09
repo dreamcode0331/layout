@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/01_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu is_active"><a href="#" class="link">STEP 01</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/02_layout.html" class="link">STEP 02</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/03_layout.html" class="link">STEP 03</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/04_layout.html" class="link">STEP 04</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/05_layout.html" class="link">STEP 05</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/06_layout.html" class="link">STEP 06</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/07_layout.html" class="link">STEP 07</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2 class="blind">1주차 Layout Step 1</h2>
+      <div class="inner">
+        <!-- step1 레이아웃 예시 -->
+        <div class="ex_layout">
+          <h3>👋STEP 1 레이아웃 예시👋</h3>
+          <div class="box_wrap">
+            <div class="box left"><span>width 고정<br>height 고정</span></div>
+            <div class="box right"><span>width 고정<br>height 고정</span></div>
+          </div>
+        </div>
+        <!-- input radio -->
+        <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+            <label for="rdo1">inline-block</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+            <label for="rdo2">table</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+            <label for="rdo3">position</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+            <label for="rdo4">flex</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+            <label for="rdo5">grid</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+            <label for="rdo6">float</label>
+          </div>
+        </div>
+        <ul class="layout_list layout_list_step_01">
+          <!-- inline-block -->
+          <li class="layout layout_01">
+            <h3>1. inline-block</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">inline-block</th>
+                <td>
+                  inline과 block의 특성을 모두 지니고 있는 inlne-block은 inline 요소처럼 컨텐츠 만큼의 크기를 차지하여 나란히 배치되거나 block 요소처럼 사용가능한 전체 너비를 차지하며 한 줄 전체의 영역에 배치된다. 
+                </td>
+                <td>
+                  - display: inline-block<br> 
+                </td>
+                <td>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능하다.<br>
+                  - FIrefox(ver.2) partial support with prefix (-moz-)<br>
+                  - IE(ver.6-7) partial support
+                  <a href="https://caniuse.com/?search=inline-block" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+            <div class="desc">
+              <p>부모요소의 너비값 1024px에 맞추어 box 1과 box 2에 각각 340px, 684px 을 주었으나 box 2가 다음 줄로 밀려났다. 정확한 값을 주었는데 박스가 밀려나는 이유는, <b>inline-block자체에 고유의 여백값을 가지고 있으므로 부모요소에 font-size: 0으로 재정의 하여 빈여백이 생기지 않도록 한다.</b></p>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+          </li>
+          <!-- table -->
+          <li class="layout layout_02">
+            <h3>2. table</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">table</th>
+                <td>
+                  display: table 속성은 다수의 아이템을 일정하게 정렬하려고 할 때 많이사용되는 방법으로 요소에 table의 성질을 갖게한다.<br><br>
+                  - [부모요소] diplay: table 로 선언함과 동시에 너비를 잡아주고<br> 
+                  - [자식요소] display: table-cell을 선언하여 table의 td 요소처럼 작동하게 한다. 
+                </td>
+                <td>
+                  - display: table<br> 
+                  - display: table-cell<br> 
+                </td>
+                <td>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능하다.<br>
+                  FIrefox(ver.2) partial support <br>
+                  IE(ver.6-7) not supported
+                  <a href="https://caniuse.com/?search=table" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <!-- .positioning_box ie용 -->
+            <div class="box_wrap">
+              <div class="box left"><div class="positioning_box"><span>BOX 1</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>BOX 2</span></div></div>
+            </div>
+          </li>
+          <!-- position -->
+          <li class="layout layout_03">
+            <h3>3. position</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">position</th>
+                <td>
+                  position 속성은 HTML 요소가 위치를 결정하는 다음의 4가지 방식을 설정한다.<br>
+                  - <b>static position(정적위치)</b> : HTML요소의 위치를 결정하는 가장 기본적인 방식으로 top, right, bottom, left 속성값에 영향을 받지 않음. 단순히 웹 페이지의 흐름에 따라 차례대로 요소들을 위치시킨다<br>
+                  - <b>relative position(상대위치)</b> : HTML요소의 기본 위치 기준으로 위치 설정<br>
+                  - <b>fixed position(고정위치)</b> : 뷰포트(viewport)를 기준으로 위치를 설정<br>
+                  - <b>absolute position(절대위치)</b> : 고정위치가 뷰포트를 기준으로 위치를 결정하는 것과 비슷하게 동작하나, 단지 뷰포트(viewport)를 기준으로 하는 것이 아닌 위치가 설정된 부모요소를 기준으로 위치를 설정
+                  
+                </td>
+                <td>
+                  - position: relative<br> 
+                  - position: absolute<br> 
+                  - left: 0<br> 
+                  - right: 0<br> 
+                </td>
+                <td>
+                  다음을 제외하고 전체적으로 모든 브라우저에서 지원 가능하다.<br>
+                  - Opera Mobile(ver.12-12.1) not supported<br>
+                  <a href="https://caniuse.com/?search=position" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+            <div class="desc">
+              <p>position으로 box1, box2를 띄워 배치하게 되면 부모요소의 높이값이 사라지게 된다. 사라진 높이 때문에 box 다음으로 배치되어 있던 레이아웃들이 타고 올라오는 현상이 생기게 되는데 이때 부모요소에 높이값을 주면 해당 현상은 해결된다.</p>
+            </div>
+          </li>
+          <!-- flex -->
+          <li class="layout layout_04">
+            <h3>4. flex</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">flex</th>
+                <td>
+                  flexible box는 flex box라고도 불리며, CSS3에서 처음 소개된 레이아웃 모델로써 서로 다른 크기의 화면과 기기에서도 HTML 요소들이 자동으로 재정렬되어, 웹 페이지의 레이아웃을 언제나 똑같이 유지할 수 있도록 함<br><br>
+                  - <b>flex box를 위해 제공되는 속성</b>은 display, flex-direction, justify-content, align-items, flex-wrap, flex-flow, align-content<br>
+                  - <b>flex item을 위해 제공되는 속성</b>은 order, align-self, flex
+                </td>
+                <td>
+                  - display: flex<br> 
+                  - flex-basis
+                </td>
+                <td>
+                  <strong>■ display: flex</strong>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 IE(ver.10 / 11)에서는 부분적으로 지원 가능하다.<br>
+                  - IE(ver.11) partial support<br>
+                  - IE(ver.10) partial support with prefix (-ms-)<br>
+                  <a href="https://caniuse.com/?search=flex" class="link" target="_blank">지원브라우저 보러가기</a> 
+                  <strong>■ flex-basis</strong>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 IE11 미만(ver.6-10)에서는 지원되지 않는다.<br>
+                  - IE(ver.6-10) not supported<br>
+                  <a href="https://caniuse.com/?search=flex-basis" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+            <div class="desc">
+              <p>정렬하려는 컨텐츠들의 부모요소에게 display: flex 를 적용하고 자식 요소에 flex-basis로 박스의 너비값을 준다</p>
+            </div>
+          </li>
+          <!-- grid -->
+          <li class="layout layout_05">
+            <h3>5. grid</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">grid</th>
+                <td>
+                  grid는 2차원(행과 열)의 레이아웃 시스템을 제공 함. flexible box는 1차원 레이아웃을 위한 속성이지만 grid는 좀 더 복잡한 레이아웃을 위해 사용 가능.<br>
+                  flex와 마찬가지로 아이템을 감싸는 부모요소(컨테이너) 안에서 아이템을 배치 할 수 있다.<br><br>
+                  <a href="hhttps://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" class="link" target="_blank">MDN WEB DOCS 보러가기</a> 
+                  <a href="https://heropy.blog/2019/08/17/css-grid/" class="link" target="_blank">HEROPY Tech의 css grid 완벽가이드</a> 
+                </td>
+                <td>
+                  - display: grid<br>
+                  - grid-template<br> 
+                </td>
+                <td>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 그 이하 버전에서는 부분적 지원이나 지원 불가의 경우도 많으므로 사전에 호환여부를 파악해야 함 
+                  웹 IE(ver.10 / 11)에서는 부분적으로 지원 가능하며 모바일 Opera Mini는 지원불가<br>
+                  <strong>■ display: grid</strong><br>
+                  - IE(ver.11) partial support with prefix (-ms-)<br>
+                  - IE(ver.10) partial support with prefix (-ms-)<br>
+                  - Opera Mini not support<br>
+                  - Opera Mobile(ver.12-12.1) not support<br>
+                  - Android Browser(ver.2.1-4.4.4) not support<br>
+
+                  <strong>■ grid-template</strong><br>
+                  - IE(ver.6-10) not support<br>
+                  - IE(ver.11) not support<br>
+                  <a href="https://caniuse.com/?search=grid" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+          </li>
+          <!-- float -->
+          <li class="layout layout_06">
+            <h3>6. float</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">float</th>
+                <td>
+                  flexible box는 flex box라고도 불리며, CSS3에서 처음 소개된 레이아웃 모델로써 서로 다른 크기의 화면과 기기에서도 HTML 요소들이 자동으로 재정렬되어, 웹 페이지의 레이아웃을 언제나 똑같이 유지할 수 있도록 함<br><br>
+                  - <b>flex box를 위해 제공되는 속성</b>은 display, flex-direction, justify-content, align-items, flex-wrap, flex-flow, align-content<br>
+                  - <b>flex item을 위해 제공되는 속성</b>은 order, align-self, flex
+                </td>
+                <td>
+                  - float: left<br> 
+                  - clear: both<br> 
+                </td>
+                <td>
+                  다음의 경우를 제외하고 대부분의 공식 최신브라우저에서 호환되고 있다<br>
+                  - Android Browser(ver.2.1-4.3) not support<br>
+                  <a href="https://caniuse.com/?search=float" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <img src="images/img_02.png" alt="float을 적용했을 때 사라진 부모의 높이값">
+            </div>
+            <div class="desc">
+              <p>box 1, box 2에 flaot을 적용하게 되면 부모요소안에서 나란히 배치되는 모습을 볼 수 있다. 그러나 박스 다음으로 위치한 컨텐츠들이 타고 올라와버리는 현상이 생기는데 이것은 컨텐츠 흐름에 따라 배치되는 float요소의 속성 때문이다. float은 뜻 그래도 띄운다라는 의미처럼 부모요소위에 붕 떠있는 형태를 취하게되므로 부모요소의 높이값은 사라지게된다.</p>
+            </div>
+            <div class="box_wrap clearfix">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+            <div class="desc">
+              <p>따라서 부모요소에 높이값을 설정하게 되면 타고올라온 컨텐츠들도 다시 제자리를 잡게 되며, 높이값 설정은 float이 적용된 부모요소에 가상선택자를 사용하여 clear 속성을 사용한다.
+              <code>
+                .clearfix::after{display:block;clear: both;content:"";}
+              </code>
+              </p>
+            </div>
+          </li>
+        </ul> 
+      </div>
+    </section>
+  </div>
+  <script>
+    // input[name="rdo_01"] 클릭했을 때,
+    $(".layout").hide();
+    $(".layout").eq(0).show();
+    $('input[name="rdo_01"]').click(function(){
+      var rdo01Index = $(this).parents(".rdo_box").index();
+      console.log("rdo01Index : " + rdo01Index)
+      $(".layout").hide();
+      $(".layout").eq(rdo01Index).show();
+    });
+  </script>   
+</body>
+</html>

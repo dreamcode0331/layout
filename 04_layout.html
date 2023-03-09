@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/04_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/01_layout.html" class="link">STEP 01</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/02_layout.html" class="link">STEP 02</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/03_layout.html" class="link">STEP 03</a></li>
+          <li class="menu is_active"><a href="#" class="link">STEP 04</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/05_layout.html" class="link">STEP 05</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/06_layout.html" class="link">STEP 06</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/07_layout.html" class="link">STEP 07</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2 class="blind">1주차 Layout Step 4</h2>
+      <div class="inner">
+        <div class="ex_layout">
+          <h3>👋STEP 4 레이아웃 예시👋</h3>
+          <div class="box_wrap box_wrap_01">
+            <div class="box left"><span>width 유동</span></div>
+            <div class="box right"><span>width 고정</span></div>
+          </div>
+          <div class="box_wrap box_wrap_02">
+            <div class="box left"><span>width 유동</span></div>
+            <div class="box right"><span>width 유동</span></div>
+          </div>
+        </div>
+        <!-- input radio -->
+        <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+            <label for="rdo1">inline-block</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+            <label for="rdo2">table</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+            <label for="rdo3">position</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+            <label for="rdo4">flex</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+            <label for="rdo5">grid</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+            <label for="rdo6">float</label>
+          </div>
+        </div>
+        <ul class="layout_list layout_list_step_04">
+          <!-- inline-block -->
+          <li class="layout layout_01">
+            <h3>1. inline-block</h3>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 고정</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box 1 : 가변적인 가로값을 갖기위해 calc() 함수 사용<br>
+                - box 2 : 684px 고정값. 
+              </p>
+              <code>
+                .layout_01 .box_wrap_01 .box.left { width: calc(100% - 684px) }<br>
+                .layout_01 .box_wrap_01 .box.right { width: 684px}
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 유동</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box : 가변적인 가로값을 갖기위해 calc() 함수 사용
+              </p>
+              <code>
+                .layout_01 .box_wrap_02 .box.left { width: calc(340/1024*100%) }<br>
+                .layout_01 .box_wrap_02 .box.right { width: calc(684/1024*100%) }
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+          </li>
+          <!-- table -->
+          <li class="layout layout_02">
+            <h3>2. table</h3>
+            <!-- .positioning_box ie용 -->
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1<br>width 유동</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 2<br>width 고정</span></div></div>
+            </div>
+            <!-- .positioning_box ie용 -->
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1<br>width 유동</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 2<br>width 고정</span></div></div>
+            </div>
+          </li>
+          <!-- position -->
+          <li class="layout layout_03">
+            <h3>3. position</h3>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 고정</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box_wrap(컨테이너) : position: relative로 아이템들 위치를 결정 할 기준 컨테이너로 지정. 높이값도 함께 적용<br>
+                - box(아이템) : position: absolute로 선언 후 컨테이너에 대비한 상대값 적용<br>
+              </p>
+              <code>
+                .layout_03 .box_wrap { position: relative; height: 340px }<br>
+                .layout_03 .box { position: absolute }<br>
+                .layout_03 .box.left { left: 0; width: calc(100% - 684px) }<br>
+                .layout_03 .box.right { right: 0; width: 684px }
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 유동</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box_wrap(컨테이너) : position: relative로 아이템들 위치를 결정 할 기준 컨테이너로 지정. 높이값도 함께 적용<br>
+                - box(아이템) : position: absolute로 선언 후 컨테이너에 대비한 상대값 적용<br>
+              </p>
+              <code>
+                .layout_03 .box_wrap_02 .box.left { width: calc(340/1024*100%) }<br>
+                .layout_03 .box_wrap_02 .box.right { width: calc(684/1024*100%) }
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+          </li>
+          <!-- flex -->
+          <li class="layout layout_04">
+            <h3>4. flex</h3>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 고정</span></div>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 유동</span></div>
+            </div>
+          </li>
+          <!-- grid -->
+          <li class="layout layout_05">
+            <h3>5. grid</h3>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 고정</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box_wrap(컨테이너) : display: grid 선언 후 grid-template-columns 속성을 사용하여 box 2 고정값을 부여하고 box 1은 가변 너비를 갖도록 1fr로 적용한다.<br>
+              </p>
+              <code>
+                .layout_05 .box_wrap { display: grid; grid-template-columns: 1fr 684px }
+              </code>
+              <p>
+                - 크로스브라우징 이슈 있음<br>
+                - display: grid - IE(ver.10~11)에서 부분적으로 지원가능 함.<br>
+              </p>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 유동</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - 열의 배치를 결정하는 grid-template-columns은 속성을 이용하여 그리드 트랙 크기를 지정한다. 
+                가로너비가 가변크기 이므로 숫자 비율대로 크기를 나누는 단위인 fr(fraction)을 사용한다. 
+                box 1 column은 1fr, box 2 column은 minmax(0, 2fr)을 적용한다.<br>
+              </p>
+              <code>
+                .layout_05 .box_wrap_02 { display: grid; grid-template-columns: 1fr 2fr}
+              </code>
+              <p>
+                - 크로스브라우징 이슈 있음<br>
+                - display: grid - IE(ver.10~11)에서 부분적으로 지원가능 함.<br>
+              </p>
+            </div>
+          </li>
+          <!-- float -->
+          <li class="layout layout_06">
+            <h3>6. float</h3>
+            <div class="box_wrap box_wrap_01">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 고정</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box 1 : calc()함수로 가변 너비값 적용<br>
+                - box 2 : px로 고정 너비값 적용
+              </p>
+              <code>
+                .layout_06 .box_wrap_01 .box.left { width: calc(100% - 684px) }
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+            <div class="box_wrap box_wrap_02">
+              <div class="box left"><span>BOX 1<br>width 유동</span></div>
+              <div class="box right"><span>BOX 2<br>width 유동</span></div>
+            </div>
+            <div class="desc">
+              <p>
+                - box 1 : calc()함수로 가변 너비값 적용<br>
+                - box 2 : calc()함수로 가변 너비값 적용
+              </p>
+              <code>
+                .layout_06 .box_wrap_02 .box.left { width: calc(340/1024*100%) }<br>
+                .layout_06 .box_wrap_02 .box.right { width: calc(684/1024*100%) }
+              </code>
+              <p>크로스브라우징 이슈 없음</p>
+            </div>
+          </li>
+        </ul> 
+      </div>  
+    </section>
+  </div> 
+  <script>
+    // input[name="rdo_01"] 클릭했을 때,
+    $(".layout").hide();
+    $(".layout").eq(0).show();
+    $('input[name="rdo_01"]').click(function(){
+      var rdo01Index = $(this).parents(".rdo_box").index();
+      console.log("rdo01Index : " + rdo01Index)
+      $(".layout").hide();
+      $(".layout").eq(rdo01Index).show();
+    });
+  </script> 
+</body>
+</html>

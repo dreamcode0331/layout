@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/03_layout_02.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>👋 스크립트로 유동적인 높이 조절하기 (Layout Step 3  - inline-block) 👋</h1>
+    <div class="intro">
+      <p class="text">1주차 ojt 과제를 진행할 때 step 3에 제시되었던 레이아웃입니다.</p>
+      <p class="text">좌측 박스의 width는 고정, 우측 박스의 width는 유동상태일 때, 컨텐츠 내용에 따라 양쪽 박스의 높이도 유동적으로 변화가 일어나도록 해야하는 문제였습니다. </p>
+      <p class="text">과제를 했던 당시에는 inline-block으로 만들어진 레이아웃으로 제시된 문제를 css로는 해결할 수 없었습니다. OTL~~</p>
+      <p class="text">그래서 해당 부분을 스크립트로 처리해보았고 기록용으로 남겨두고자 팀에 공유 드립니다.</p>
+    </div>
+    <div class="ex_layout">
+      <div class="box_wrap">
+        <h2>■ 예제 레이아웃</h2>
+        <div class="box left"><span>width 고정<br>height 유동 </span></div>
+        <div class="box right"><span>width 유동<br>height 유동</span></div>
+      </div>
+    </div>
+    <div class="layout layout_01">
+      <h2>■ inline-block (스크립트 적용 전)</h2>
+      <div class="desc">
+        <p class="text">브라우저의 너비가 줄어들면 box의 너비가 box 1은 고정, box 2는 유동적으로 움직입니다.</p>
+        <p class="text">그런데 box 2의 컨텐츠 양에 따른 높이를 box 1의 높이가 따라가지 못합니다. ㅠㅠ 이걸 따라가게 해야 문제가 해결되는데 말이죠.</p>
+      </div>
+      <div class="box_wrap">
+        <div class="box left">
+          <span>BOX 1</span>
+          <p class="text_multi">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        <div class="box right">
+          <span>BOX 2</span>
+          <p class="text_multi">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="layout layout_02">  
+      <h2>■ inline-block (스크립트 적용 후)</h2>
+      <div class="desc">
+        <p class="text">스크립트 적용 후의 모습입니다.</p>
+      </div>
+      <div class="box_wrap">
+        <div class="box left">
+          <span>BOX 1</span>
+          <p class="text_multi">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        <div class="box right">
+          <span>BOX 2</span>
+          <p class="text_multi">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="layout layout_03">
+      <h2>■ 스크립트 적용 구조</h2>
+      <div class="desc">
+        <code>var boxW = $('.layout_02 .box_wrap').innerWidth();<span class="annotation"> // 박스 1, 2를 감싸고 있는 부모요소의 너비값 : 1024px</span> </code>           
+        <code>var boxH = $('.layout_02 .box_wrap').innerHeight();<span class="annotation"> // 박스 1, 2를 감싸고 있는 부모요소의 높이값 : 340px</span></code>
+        <code>var leftH = $('.layout .box_wrap .box.left').innerHeight();<span class="annotation"> // 박스 1의 높이값</span></code>
+        <code>var righth = $('.layout .box_wrap .box.right').innerHeight();<span class="annotation"> // 박스 2의 높이값</span></code>
+        <code>var temp = 0;<span class="annotation"> // 빈 값</span></code>
+        <code>var temp = boxH - leftH;<span class="annotation"> // 부모요소 높이값 - 박스 1 높이값</span></code>
+        <code>var temp2 = temp + leftH;<span class="annotation"> // 박스2 높이값 = temp + 박스 1 높이값</span></code>
+      </div>
+      <div class="img_wrap"><img src="images/img.jpg" alt=""></div>
+    </div>
+  </div>  
+  <script>
+    // inline-block .box_wrap_02 높이 맞추기
+
+    /* *** element's(요소)의 크기 값에 영향을 미치는 구성방식
+
+    1.element의 높이(height)를 측정하는 방법
+
+    height() : 내부높이 - padding까지 제외한 순수하게 요소의 내부 크기만을 측정
+    innerHeight() : 내부높이 + padding - padding을 포함한 내부 크기를 측정
+    outerHeight() : 내부높이 + padding + border - padding을 포함한 내부 크기와 border크기까지 측정
+    outerHeight(true) : 내부높이 + padding + border + margin - 위 3개의 구성을 모두 포함한 크기를 측정 
+    
+    2.element의 너비(widht)를 측정하는 방법
+    width() : 내부너비 - padding까지 제외한 순수하게 요소의 내부 크기만을 측정
+    innerWidth() : 내부너비 + padding - padding을 포함한 내부 크기를 측정
+    outerWidth() : 내부너비 + padding + border - padding을 포함한 내부 크기와 border크기까지 측정
+    outerWidth(true) : 내부너비 + padding + border + margin - 위 3개의 구성을 모두 포함한 크기를 측정 
+    */    
+
+    // 전역변수 (새로고침 했을 때 양쪽 박스의 높이를 항상 같게하기 위한 용도)
+    var boxW = $('.layout_02 .box_wrap').innerWidth(); // 박스 1, 2를 감싸고 있는 부모요소의 너비값 : 1024px                       
+    var boxH = $('.layout_02 .box_wrap').innerHeight(); // 박스 1, 2를 감싸고 있는 부모요소의 높이값 : 340px
+    var leftH = $('.layout .box_wrap .box.left').innerHeight(); // 박스 1의 높이값 
+    var righth = $('.layout .box_wrap .box.right').innerHeight(); // 박스 2의 높이값 
+    var temp = 0; // 빈 값
+    var temp = boxH - leftH; // 부모요소 높이값 - 박스 1 높이값
+    var temp2 = temp + leftH; // 박스2 높이값 = temp + 박스 1 높이값
+    $('.layout_02 .box_wrap .box.left').css('height',temp2);
+    $(window).resize(function () {
+        // 지역변수
+        var boxW = $('.layout_02 .box_wrap').innerWidth(); // 박스 1, 2를 감싸고 있는 부모요소의 너비값 : 1024px
+        var boxH = $('.layout_02 .box_wrap').innerHeight(); // 박스 1, 2를 감싸고 있는 부모요소의 높이값 : 340px
+        var leftH = $('.layout_02 .box_wrap .box.left').innerHeight(); // 박스 1의 높이값 
+        var righth = $('.layout_02 .box_wrap .box.right').innerHeight(); // 박스 2의 높이값 
+        var temp = 0; // 빈 값
+        var temp = boxH - leftH; // 부모요소 높이값 - 박스 1 높이값
+        var temp2 = temp + leftH; // 박스2 높이값 = temp + 박스 1 높이값
+
+        console.log("박스 1, 2를 감싸고 있는 부모요소의 너비값 : " + boxW);
+        console.log("박스 1, 2를 감싸고 있는 부모요소의 높이값 : " + boxH);
+        console.log("박스 1의 높이값 : " + leftH);
+        console.log("박스 2의 높이값 : " + righth);
+        console.log("부모요소 높이값 - 박스 1 높이값 : " + temp);
+        console.log("박스2 높이값 = temp + 박스 1 높이값 : " + temp2);
+
+      setTimeout(function(){ // resize 될 때 반응 속도 (10 밀리초 = 0.01 초)
+        /* *** AND 연산자
+          MDN 참조 링크 : 
+          https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Bitwise_AND
+          https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Logical_AND
+          &  : 첫번째, 두번째 두 조건을 무조건 검사.첫번째 조건이 false 라도 두번째  조건을 무조건 검사함.
+          && : 
+            피연산자를 왼쪽에서 오른쪽으로 평가. 
+            첫번째 조건이 true일때만 검사. 
+            두 조건이 모두 true 이어야 함. 
+            첫번째 조건이 false이면 두번째 조건을 검사하지 않음. 
+            처음 만나는 조건이 false라면 해당 값을 반환하며 모두 true라면 마지막 피연산자의 값을 반환한다.
+        */
+        
+        if(boxW < 1024 && leftH < righth) { // 부모박스 너비값이 1024보다 작고 && 박스 1의 높이값이 박스 2의 높이값 보다 작다면
+          $('.layout_02 .box_wrap .box.left').css('height',temp2); // box 1의 높이값을 temp2로 적용
+        } else if((leftH >= righth)) { // 박스 1의 높이값이 박스 2의 높이값보다 크거나 같다면
+          $('.layout_02 .box_wrap .box.left').css('height',righth); // box 1의 높이값을 박스 2로 적용
+        } 
+      }, 10);
+    });
+
+  </script>
+</body>
+</html>

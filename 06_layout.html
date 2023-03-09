@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>이미연 OJT</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/06_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/01_layout.html" class="link">STEP 01</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/02_layout.html" class="link">STEP 02</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/03_layout.html" class="link">STEP 03</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/04_layout.html" class="link">STEP 04</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/05_layout.html" class="link">STEP 05</a></li>
+          <li class="menu is_active"><a href="#" class="link">STEP 06</a></li>
+          <li class="menu"><a href="http://ft-dev.pages.hivelab.co.kr/ojt_2023_1th/leemiyeon/1%EC%A3%BC%EC%B0%A8/07_layout.html" class="link">STEP 07</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2 class="blind">1주차 Layout Step 6</h2>
+      <div class="inner">
+        <div class="desc">
+          <p>!!!! table과 grid에 여백을 부여하는 과정에서 발생되는 문제점이 있음</p>
+          <div class="img_area"><img src="images/img_06.png" alt="width값이 다른 박스 레이아웃"></div>  
+          <p> ➡ 서로 같은 영역을 나누어 차지하는 특성때문에 첫번째 박스에만 0으로 설정한 마진값이 빠지면서 동일한 너비값을 갖지 못하는 문제가 발생되었다.</p>
+          <div class="img_area"><img src="images/img_05.png" alt="width값이 같은 박스 레이아웃"></div>
+          <p> ➡ margin-left를 첫번째 박스 제외하고 적용했을 때 위 이미지처럼 박스의 너비가 동일하게 나타도록 다음과 같은 방법을 사용하였다.
+          <div class="img_area w_wide"><img src="images/img_07.png" alt=""></div> 
+          <p>✅ 박스 아이템을 감싸고 있는 부모요소에 width값을 적용하려는 여백값 만큼 더하여 적용한다. </p>
+          <p>✅ 박스 아이템 요소에 여백을 border로 적용한다. (단, 보더의 색상은 투명으로)</p>
+          <p>✅ 보더의 색상이 투명하기때문에 박스가 차지하는 만큼의 영역이 얼마만큼인지 알수 없으므로 해당 영역을 구분짓기 위해 background-clip : padding-box를 적용하여 border를 뺀 나머지의 영역만 보여지도록 한다.</p>
+          <p>✅ 박스 아이템을 감싸고 있는 부모요소에 margin 속성으로 border값 만큼 빼주고 상위 부모요소에 overflow: hidden 한다. </p>
+          <p>✅ 문제가 발생된 table, grid에 모두 똑같은 방법을 적용하였으며 table IE 9까지, grid는 IE 10까지 문제없이 보여진다. ¯\_(ツ)_/¯</p>
+        </div>
+        <ul class="layout_list layout_list_step_06">
+          <!-- ******* 예제 6-1 ******* -->
+          <li class="layout layout_01">
+            <h3>[예제 6-1] width_유동 / 여백_10px 고정</h3>
+            <!-- input radio -->
+            <div class="rdo_area">
+              <div class="rdo_box">
+                <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+                <label for="rdo1">inline-block</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+                <label for="rdo2">table</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+                <label for="rdo3">position</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+                <label for="rdo4">flex</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+                <label for="rdo5">grid</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+                <label for="rdo6">float</label>
+              </div>
+            </div>
+            <!-- 예제 6-1 : inline-block -->
+            <div class="box_wrap layout_inline_block">
+              <div class="box left"><span>inline-block<br>BOX 1</span></div>
+              <div class="box center"><span>inline-block<br>BOX 2</span></div>
+              <div class="box right"><span>inline-block<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-1 : table -->
+            <div class="box_wrap layout_table">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1</span></div></div>
+              <div class="box center"><div class="positioning_box"><span>table<br>BOX 2</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 3</span></div></div>
+            </div>
+            <!-- 예제 6-1 : position -->
+            <div class="box_wrap layout_position">
+              <div class="box left"><span>position<br>BOX 1</span></div>
+              <div class="box center"><span>position<br>BOX 2</span></div>
+              <div class="box right"><span>position<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-1 : flex -->
+            <div class="box_wrap layout_flex">
+              <div class="box left"><span>flex<br>BOX 1</span></div>
+              <div class="box center"><span>flex<br>BOX 2</span></div>
+              <div class="box right"><span>flex<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-1 : grid -->
+            <div class="box_wrap layout_grid">
+              <div class="box left"><span>grid<br>BOX 1</span></div>
+              <div class="box center"><span>grid<br>BOX 2</span></div>
+              <div class="box right"><span>grid<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-1 : float -->
+            <div class="box_wrap layout_float">
+              <div class="box left"><span>float<br>BOX 1</span></div>
+              <div class="box center"><span>float<br>BOX 2</span></div>
+              <div class="box right"><span>float<br>BOX 3</span></div>
+            </div>
+          </li>
+          <!-- ******* 예제 6-2 ******* -->
+          <li class="layout layout_02">
+            <h3>[예제 6-2] width_유동 / 여백_3% 유동</h3>
+            <!-- input radio -->
+            <div class="rdo_area">
+              <div class="rdo_box">
+                <input type="radio" id="rdo7" name="rdo_02" class="input_rdo blind" checked>
+                <label for="rdo7">inline-block</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo8" name="rdo_02" class="input_rdo blind">
+                <label for="rdo8">table</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo9" name="rdo_02" class="input_rdo blind">
+                <label for="rdo9">position</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo10" name="rdo_02" class="input_rdo blind">
+                <label for="rdo10">flex</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo11" name="rdo_02" class="input_rdo blind">
+                <label for="rdo11">grid</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo12" name="rdo_02" class="input_rdo blind">
+                <label for="rdo12">float</label>
+              </div>
+            </div>
+            <!-- 예제 6-2 : inline-block -->
+            <div class="box_wrap layout_inline_block">
+              <div class="box left"><span>inline-block<br>BOX 1</span></div>
+              <div class="box center"><span>inline-block<br>BOX 2</span></div>
+              <div class="box right"><span>inline-block<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-2 : table -->
+            <div class="box_wrap layout_table">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1</span></div></div>
+              <div class="box space"><div class="positioning_box"><span class="blind">space area</span></div></div>
+              <div class="box center"><div class="positioning_box"><span>table<br>BOX 2</span></div></div>
+              <div class="box space"><div class="positioning_box"><span class="blind">space area</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 3</span></div></div>
+            </div>
+            <!-- 예제 6-2 : position -->
+            <div class="box_wrap layout_position">
+              <div class="box left"><span>position<br>BOX 1</span></div>
+              <div class="box center"><span>position<br>BOX 2</span></div>
+              <div class="box right"><span>position<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-2 : flex -->
+            <div class="box_wrap layout_flex">
+              <div class="box left"><span>flex<br>BOX 1</span></div>
+              <div class="box center"><span>flex<br>BOX 2</span></div>
+              <div class="box right"><span>flex<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-2 : grid -->
+            <div class="box_wrap layout_grid">
+              <div class="box left"><span>grid<br>BOX 1</span></div>
+              <div class="box center"><span>grid<br>BOX 2</span></div>
+              <div class="box right"><span>grid<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-2 : float -->
+            <div class="box_wrap layout_float">
+              <div class="box left"><span>float<br>BOX 1</span></div>
+              <div class="box center"><span>float<br>BOX 2</span></div>
+              <div class="box right"><span>float<br>BOX 3</span></div>
+            </div>
+            <div class="desc">
+              <p>- table 속성 사용 시 여백을 %로 지정하기 위해 다양한 방법을 시도했지만 적당한걸 찾을 수 없음.(위에서 시도한 border 속성으로 적용한 사례는 border에 % 지정이 불가하여 사용하지 못함.)</p>
+              <p>__그래서 여백을 주는 대신 여백 공간에 박스 2개를 추가하여 width 3%를 적용, 여백으로 대체 하였음</p><br>
+              <p>- grid속성 사용 시 여백을 %로 지정하려면 grid-gap속성 이외에 적당한걸 찾을 수 없음.</p>
+              <p>__따라서 IE에서는 방어 불가. </p>
+            </div>
+          </li>
+          <!-- ******* 예제 6-3 ******* -->
+          <li class="layout layout_03">
+            <h3>[예제 6-3] width_고정 / 여백_유동</h3>
+            <!-- input radio -->
+            <div class="rdo_area">
+              <div class="rdo_box">
+                <input type="radio" id="rdo13" name="rdo_03" class="input_rdo blind" checked>
+                <label for="rdo13">inline-block</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo14" name="rdo_03" class="input_rdo blind">
+                <label for="rdo14">table</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo15" name="rdo_03" class="input_rdo blind">
+                <label for="rdo15">position</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo16" name="rdo_03" class="input_rdo blind">
+                <label for="rdo16">flex</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo17" name="rdo_03" class="input_rdo blind">
+                <label for="rdo17">grid</label>
+              </div>
+              <div class="rdo_box">
+                <input type="radio" id="rdo18" name="rdo_03" class="input_rdo blind">
+                <label for="rdo18">float</label>
+              </div>
+            </div>
+            <!-- 예제 6-3 : inline-block -->
+            <div class="box_wrap layout_inline_block">
+              <div class="box left"><span>inline-block<br>BOX 1</span></div>
+              <div class="box center"><span>inline-block<br>BOX 2</span></div>
+              <div class="box right"><span>inline-block<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-3 : table -->
+            <div class="box_wrap layout_table">
+              <div class="box left"><div class="positioning_box"><span>table<br>BOX 1</span></div></div>
+              <div class="box space"><div class="positioning_box"><span class="blind">space area</span></div></div>
+              <div class="box center"><div class="positioning_box"><span>table<br>BOX 2</span></div></div>
+              <div class="box space"><div class="positioning_box"><span class="blind">space area</span></div></div>
+              <div class="box right"><div class="positioning_box"><span>table<br>BOX 3</span></div></div>
+            </div>
+            <!-- 예제 6-3 : position -->
+            <div class="box_wrap layout_position">
+              <div class="box left"><span>display:block<br>BOX 1</span></div>
+              <div class="box center"><span>position<br>BOX 2</span></div>
+              <div class="box right"><span>position<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-3 : flex -->
+            <div class="box_wrap layout_flex">
+              <div class="box left"><span>flex<br>BOX 1</span></div>
+              <div class="box center"><span>flex<br>BOX 2</span></div>
+              <div class="box right"><span>flex<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-3 : grid -->
+            <div class="box_wrap layout_grid">
+              <div class="box left"><span>grid<br>BOX 1</span></div>
+              <div class="box space"><span class="blind">space area</span></div>
+              <div class="box center"><span>grid<br>BOX 2</span></div>
+              <div class="box space"><span class="blind">space area</span></div>
+              <div class="box right"><span>grid<br>BOX 3</span></div>
+            </div>
+            <!-- 예제 6-3 : float -->
+            <div class="box_wrap layout_float">
+              <div class="box left"><span>float<br>BOX 1</span></div>
+              <div class="box center"><span>float<br>BOX 2</span></div>
+              <div class="box right"><span>float<br>BOX 3</span></div>
+            </div>
+          </li>
+          <div class="desc">
+            <p>- table 속성 사용 시 여백을 %로 지정하기 위해 다양한 방법을 시도했지만 적당한걸 찾을 수 없음.(위에서 시도한 border 속성으로 적용한 사례는 border에 % 지정이 불가하여 사용하지 못함.)</p>
+            <p>__그래서 여백을 주는 대신 여백 공간에 박스 2개를 추가하여 width 6%를 적용, 여백으로 대체 하였음</p><br>
+            <p>- grid속성 사용 시 여백을 %로 지정하려면 grid-gap속성 이외에 적당한걸 찾을 수 없음. (따라서 IE에서는 방어 불가.)</p>
+            <p>__그래서 여백을 주는 대신 여백 공간에 아이템 2개를 추가하여 width 6%를 적용<code>grid-template-columns: 300px 6% 300px 6% 300px</code></p>
+            <p>__미세하게 남는 공간은 justify-content: space-between 사용. (그러나 IE에서는 방어 불가.) </code></p>
+            <p>__IE에서는 고정 width값에 0.4px씩 추가 <code>grid-template-columns: 300.4px 6% 300.4px 6% 300.4px</code> 눈속임용이랄까 흙흙</p>
+          </div>
+        </ul> 
+      </div>  
+    </section>
+  </div>  
+  <script>
+    // .rdo_box를 클릭했을 때,
+    $(".box_wrap").hide();
+    $(".layout_inline_block").show();
+    $('.rdo_box').click(function(){
+      var layoutIndex = $(this).parents(".layout").index();
+      var rdoBoxIndex = $(this).index();
+      $(".layout:eq("+ layoutIndex +") .box_wrap").hide();
+      $(".layout:eq("+ layoutIndex +") .box_wrap:nth-of-type("+ (rdoBoxIndex+2) +")").show();
+    });
+  </script>
+</body>
+</html>
