@@ -1,57 +1,5 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
-.header{position:fixed;top:0;left:0;z-index:99;width:100%;height:64px;background:#260048;opacity:0.7;text-align:center;color:#fff;line-height:64px;}
-.header .inner{margin:0 auto;width:100%;min-width:1024px;height:100%}
-.gnb .menu_list .menu{display:inline-block;height:64px}
-.gnb .menu_list .menu .link{display:inline-block;margin:0 10px;padding:0 15px;font-size:16px;color:#fff}
-.gnb .menu_list .menu:hover .link, .gnb .menu_list .menu:focus .link,.gnb .menu_list .menu.is_active .link{color:yellow;font-weight:bold;text-decoration:underline}
-h1{font-size:24px}
-h2{padding:30px 0 5px;border-bottom:1px solid #333;font-size:18px;text-align:center}
-h3{padding-bottom:15px;font-size:16px}
-.markup{position:relative;padding:64px 0 100px;font-size:16px}
-.markup li a{background:none}
-.markup li span{color:#000}
-table{width:100%}
-table,th,td{padding:5px 10px;line-height:1.5;border: 1px solid #333;font-size:13px}
-td .link{background:none;font-size:12px;color:#ff0000}
-td strong,td .link{display:block}
-th{text-align:center}
-.th_01{width:10%}
-.th_02{width:32%}
-.th_03{width:22%}
-.th_01,.th_02,.th_03,.th_04{background:#cdcdcd;color:#000}
-.inner{margin:50px auto 0;width:100%;max-width:1024px}
-abbr{font-style: italic;font-weight:bold}
-
-/* input radio */
-.rdo_area{min-width:1024px;margin:40px 0 20px;text-align: center;}
-.rdo_box{display:inline-block;position:relative;margin-left:20px;vertical-align:middle}
-.rdo_box input,.rdo_box input + label{cursor:pointer}
-.rdo_box input:checked + label{font-weight:bold}
-.rdo_box input[type="radio"] + label{position:relative;padding-left:22px}
-.rdo_box input[type="radio"] + label:before,
-.rdo_box input[type="radio"]:checked + label:before,
-.rdo_box input[type="radio"]:checked + label:after{position:absolute;top:0;left:0;width:17px;height:17px;border-radius:50%;box-sizing:border-box;content:""}
-.rdo_box input[type="radio"] + label:before{border:1px solid #9d9d9d;background:#fff}
-.rdo_box input[type="radio"]:checked + label:before{border:2px solid #6a0474;background:#6a0474}
-.rdo_box input[type="radio"]:checked + label:after{top:2px;left:2px;width:13px;height:13px;border:2px solid #ffffff;background:#6a0474}
-
-/* layout 공통 */
-.layout_list .layout{margin-top:50px}
-.box_wrap{margin:0 auto;width:1024px;background:#e2e2e2;}
-.box_wrap img{max-width:100%}
-.box{position:relative}
-.positioning_box{position:relative;width:100%;height:200px}
-.box span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:26px;text-align:center}
-.box.left{background:rgba(198,123,220,0.9)}
-.box.center{background:rgba(198,123,220,0.7)}
-.box.right{background:rgba(198,123,220,0.5)}
-.desc{margin:20px 0 50px;line-height:1.5}
-.desc img{display:block;margin:30px auto;width:100%}
-code{display:block;margin:30px 0;padding:7px;background:#000;color:#fff;font-family: 'Inconsolata', monospace}
-.txt_bold{font-weight:bold}
-
-/*******************************************************************************************************/
 
 /* box_wrap 너비값 재정의 */
 .box_wrap{width:100%}
