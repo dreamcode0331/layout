@@ -1,0 +1,23 @@
+@charset "utf-8";
+.header{position:fixed;top:0;left:0;z-index:99;width:100%;height:64px;background:#260048;opacity:0.7;text-align:center;color:#fff;line-height:64px;}
+.header .inner{margin:0 auto;width:100%;min-width:1024px;height:100%}
+.gnb .menu_list .menu{display:inline-block;height:64px}
+.gnb .menu_list .menu .link{display:inline-block;margin:0 10px;padding:0 15px;font-size:16px;color:#fff}
+.gnb .menu_list .menu:hover .link, .gnb .menu_list .menu:focus .link,.gnb .menu_list .menu.is_active .link{color:yellow;font-weight:bold;text-decoration:underline}
+h1{font-size:24px}
+h2{padding:30px 0 5px;border-bottom:1px solid #333;font-size:18px;text-align:center}
+h3{padding-bottom:15px;font-size:16px}
+.markup{position:relative;padding:64px 0 100px;font-size:16px}
+.markup li a{background:none}
+.markup li span{color:#000}
+table{width:100%}
+table,th,td{padding:5px 10px;line-height:1.5;border: 1px solid #333;font-size:13px}
+td .link{background:none;font-size:12px;color:#ff0000}
+td strong,td .link{display:block}
+th{text-align:center}
+.th_01{width:10%}
+.th_02{width:32%}
+.th_03{width:22%}
+.th_01,.th_02,.th_03,.th_04{background:#cdcdcd;color:#000}
+.inner{margin:50px auto 0;width:100%;max-width:1024px}
+.giscus{margin:0 auto;max-width:1024px}
