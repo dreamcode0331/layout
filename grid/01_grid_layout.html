@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>layout</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="inner">
+      <h1 class="blind">마크업산출물</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP1 Grid란?</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP7</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content">
+    <section class="markup">
+      <h2>🤜 Grid Layout 뿌시기! 🤛 </h2>
+      <div class="inner">
+        <!-- input radio -->
+        <!-- <div class="rdo_area">
+          <div class="rdo_box">
+            <input type="radio" id="rdo1" name="rdo_01" class="input_rdo blind" checked>
+            <label for="rdo1">inline-block</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo2" name="rdo_01" class="input_rdo blind">
+            <label for="rdo2">table</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo3" name="rdo_01" class="input_rdo blind">
+            <label for="rdo3">position</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo4" name="rdo_01" class="input_rdo blind">
+            <label for="rdo4">flex</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo5" name="rdo_01" class="input_rdo blind">
+            <label for="rdo5">grid</label>
+          </div>
+          <div class="rdo_box">
+            <input type="radio" id="rdo6" name="rdo_01" class="input_rdo blind">
+            <label for="rdo6">float</label>
+          </div>
+        </div> -->
+        <div class="layout_wrap">
+          <!-- grid -->
+          <div class="layout grid">
+            <h3>5. grid</h3>
+            <table>
+              <tr>
+                <th class="th_01" scope="col">속성</th>
+                <th class="th_02" scope="col">설명</th>
+                <th class="th_03" scope="col">예제에서 사용된 속성</th>
+                <th class="th_04" scope="col">브라우저 서포트</th>
+              </tr>
+              <tr>
+                <th scope="row">grid</th>
+                <td>
+                  grid는 2차원(행과 열)의 레이아웃 시스템을 제공 함. flexible box는 1차원 레이아웃을 위한 속성이지만 grid는 좀 더 복잡한 레이아웃을 위해 사용 가능.<br>
+                  flex와 마찬가지로 아이템을 감싸는 부모요소(컨테이너) 안에서 아이템을 배치 할 수 있다.<br><br>
+                  <a href="hhttps://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" class="link" target="_blank">MDN WEB DOCS 보러가기</a> 
+                  <a href="https://heropy.blog/2019/08/17/css-grid/" class="link" target="_blank">HEROPY Tech의 css grid 완벽가이드</a> 
+                </td>
+                <td>
+                  <span class="txt_bold">■ display: grid</span><br>
+                  <span class="txt_bold">■ grid-template</span><br>
+                  - 컨테이너에 Grid 트랙의 크기들을 지정해주는 속성<br>
+                  - grid-template-rows는 행(row)의 배치<br>
+                  - grid-template-columns는 열(column)의 배치<br>
+                  - 여러가지 단위를 섞어 사용 가능<br>
+                  grid-template-columns: 1fr 1fr 1fr<br>
+                  grid-template-columns: repeat(3, 1fr)<br>
+                  grid-template-columns: 200px 1fr<br>
+                  grid-template-columns: 100px 200px auto<br>
+                </td>
+                <td>
+                  대부분의 공식 최신브라우저에서 호환되고 있으나 그 이하 버전에서는 부분적 지원이나 지원 불가의 경우도 많으므로 사전에 호환여부를 파악해야 함 
+                  웹 IE(ver.10 / 11)에서는 부분적으로 지원 가능하며 모바일 Opera Mini는 지원불가<br>
+                  <strong>■ display: grid</strong><br>
+                  - IE(ver.11) partial support with prefix (-ms-)<br>
+                  - IE(ver.10) partial support with prefix (-ms-)<br>
+                  - Opera Mini not support<br>
+                  - Opera Mobile(ver.12-12.1) not support<br>
+                  - Android Browser(ver.2.1-4.4.4) not support<br>
+
+                  <strong>■ grid-template</strong><br>
+                  - IE(ver.6-10) not support<br>
+                  - IE(ver.11) not support<br>
+                  <a href="https://caniuse.com/?search=grid" class="link" target="_blank">지원브라우저 보러가기</a> 
+                </td>
+              </tr>
+            </table>
+            <div class="box_wrap">
+              <div class="box left"><span>BOX 1</span></div>
+              <div class="box right"><span>BOX 2</span></div>
+            </div>
+            <div class="desc">
+              <code>
+                .layout_05 .box_wrap { display: grid; grid-template-columns: 340px 1fr }
+              </code>
+              <p>" <mark><abbr title="fraction">fr</abbr></mark> "은 숫자 비율대로 트랙의 크기를 나눈다.</p>
+              <p>위에서는 grid-template-columns: 340px 1fr 이 적용되어 있으므로 2개의 트랙 중 첫번째 트랙은(1열;box1)은 340px의 너비값을, 두번째 트랙은(2열;box2) [ 1 : 1 = 340px : auto ] 의 비율로 유연하게 움직이게 됨. </p>
+              <p>하지만 위의 코드만으로는 IE 11에서 적용되지 않는다.😣</p>
+              <div class="cross_browsing_area">
+                <span class="tit">[크로스브라우징] grid 속성을 IE 11에서 적용해보기</span>
+                <div class="inner">
+                  <div class="memo_wrap">
+                    <div class="memo">
+                      <p><mark>▶ IE에서 grid 적용을 위해 필요한 것들</mark></p>
+                      <p>vendor prefix (-ms-)</p>
+                      <p>- Grid Container Properties<br>
+                        -ms-grid-columns : 암시적인 열(Track)의 크기를 정의<br>
+                        grid-template-areas : 영역(Area) 이름을 참조해 템플릿 생성</p>
+                      <p>- Grid Item Properties<br>
+                        -ms-grid-column : grid-column-xxx의 단축 속성(열 시작/끝 위치)<br> 
+                        grid-area : 영역(Area) 이름을 설정하거나, grid-row와 grid-column의 단축 속성
+                      </p>
+                    </div>
+                  </div>
+                  <div class="img_area"><img src="../images/grid_img.PNG" alt="grid 속성값을 이미지로 표시"></div>
+                  <p>Grid 컨테이너에 적용할 속성은 grid-columns, grid-template-areas 이며</p>
+                  <p>Grid 아이템에 적용할 속성은 grid-column, grid-area 이다.</p><br>
+                  
+                  <p>1. [컨테이너] box1은 340px 고정 너비값을 갖고 box2는 유동적인 너비값을 갖기 위해 grid-columns: 340px 1fr 을 적용한다.</p>
+                  <p>2. [컨테이너] grid-template-areas 속성을 사용해 box1, box2의 영역 이름을 "boxleft boxright"라고 정의한다.</p>
+                  <p>   ㄴ boxleft는 340px의 값을, boxright는 1fr의 값을 갖게 된다.</p>
+                  <p>3. [아이템] .box.right 영역에서 boxright의 위치를 시작위치:2, 끝나는위치 auto로 설정하여 배치한다. 예제에서는 축약형으로 사용하였다. </p>
+                  <p>4. [아이템] .box.right 영역에서 grid-area속성을 사용하여 boxright의 영역 이름을 참조한다.</p><br>
+                  <p>위 내용을 코드로 나타내 보면,</p>
+                  <code>
+                    .layout_05 .box_wrap { display:-ms-grid; display:grid; -ms-grid-columns: 340px 1fr; grid-template-columns: 340px 1fr; grid-template-areas: "boxleft boxright" }<br>
+                    .layout_05 .box.right { -ms-grid-column: 2; grid-area: boxright }
+                  </code><br>
+                  <p>Vendor Prefix를 자동으로 변경해주는 사이트 <a href="https://autoprefixer.github.io/" target="_blank" class="link">💘Autoprefixer 바로가기</a></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <script src="https://giscus.app/client.js"
+          data-repo="dreamcode0331/layout"
+          data-repo-id="R_kgDOJHPWbA"
+          data-category="General"
+          data-category-id="DIC_kwDOJHPWbM4CUwD-"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="ko"
+          crossorigin="anonymous"
+          async>
+  </script>
+      </div>
+    </section>
+  </div>
+  <script>
+    // input[name="rdo_01"] 클릭했을 때,
+    $(".layout").hide();
+    $(".layout").eq(0).show();
+    $('input[name="rdo_01"]').click(function(){
+      var rdo01Index = $(this).parents(".rdo_box").index();
+      console.log("rdo01Index : " + rdo01Index)
+      $(".layout").hide();
+      $(".layout").eq(rdo01Index).show();
+    });
+  </script> 
+</body>
+</html>
