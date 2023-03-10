@@ -1,13 +1,13 @@
 @charset "utf-8";
-.header{position:fixed;top:0;left:0;z-index:99;width:100%;height:64px;background:#260048;opacity:0.7;text-align:center;color:#fff;line-height:64px;}
-.header .inner{margin:0 auto;width:100%;min-width:1024px;height:100%}
-.gnb .menu_list .menu{display:inline-block;height:64px}
+.header{position:fixed;top:0;left:0;z-index:99;width:200px;height:100%;background:#260048;opacity:0.7;text-align:center;color:#fff;line-height:64px;}
+.header .inner{margin:0 auto;padding-top:50px;height:100%}
+.gnb .menu_list .menu{display:block;height:64px}
 .gnb .menu_list .menu .link{display:inline-block;margin:0 10px;padding:0 15px;font-size:16px;color:#fff}
 .gnb .menu_list .menu:hover .link, .gnb .menu_list .menu:focus .link,.gnb .menu_list .menu.is_active .link{color:yellow;font-weight:bold;text-decoration:underline}
 h1{font-size:24px}
-h2{padding:30px 0 5px;border-bottom:1px solid #333;font-size:18px;text-align:center}
+h2{padding:30px 0 5px;text-align:center}
 h3{padding-bottom:15px;font-size:16px}
-.markup{position:relative;padding:64px 0 50px;font-size:16px}
+.markup{position:relative;margin-left:200px;padding:0 20px 50px;font-size:16px}
 .markup li a{background:none}
 .markup li span{color:#000}
 table{width:100%}
@@ -36,10 +36,10 @@ th{text-align:center}
 .rdo_box input[type="radio"]:checked + label:after{top:2px;left:2px;width:13px;height:13px;border:2px solid #ffffff;background:#6a0474}
 
 /* layout 공통 */
-.layout_list .layout{margin-top:50px}
+.layout_wrap .layout{margin-top:50px}
 .box_wrap{margin:20px auto 0;width:1024px;background:#e2e2e2;}
 .box_wrap img{max-width:100%}
-.box{position:relative}
+.box{position:relative;height:200px}
 .positioning_box{position:relative;width:100%;height:200px}
 .box span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:26px}
 .box.left{background:rgba(198,123,220,0.9)}
@@ -48,3 +48,10 @@ th{text-align:center}
 .desc{margin:20px 0 50px;line-height:1.5}
 .desc img{display:block;margin:30px auto;width:100%}
 code{display:block;margin:30px 0;padding:7px;background:#000;color:#fff}
+
+/* 메모 */
+.memo{display:flex;flex-direction:column;justify-content:center;position:absolute;top:39px;right:30px;padding:20px 10px;width:200px;border:1px dotted tomato;border-radius:5px;background:rgba(255,99,71,0.5);text-align:left;box-shadow: 1px 1px 1px 1px tomato;
+  transform: rotate(5deg);box-sizing:border-box}
+.memo p{position:relative;padding-left:10px;font-size:13px}
+.memo p:before{position:absolute;top:8px;left:0;width:3px;height:3px;border-radius:50%;background:#333;content:""}
+.memo p:after{position:absolute;bottom:0;left:0;width:100%;height:1px;background:tomato;content:""}

@@ -1,0 +1,17 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
+
+/* grid */
+.layout.grid code{margin:6px 0 0}
+.layout.grid .desc p{margin-top:15px}
+.layout.grid .box_wrap{display:-ms-grid;display:grid;-ms-grid-columns:340px 1fr;grid-template-columns:340px 1fr;grid-template-areas:"boxleft boxright"}
+.layout.grid .box.right{-ms-grid-column:2;grid-area:boxright}
+
+.cross_browsing_area{position:relative;margin-top:30px}
+.cross_browsing_area .tit{font-size:20px;font-weight:bold}
+.cross_browsing_area .inner{margin:0;margin-left:10px}
+.cross_browsing_area .memo_wrap{height:300px;}
+.cross_browsing_area .memo_wrap .memo{top:60px;left:50%;padding:12px 10px;width:540px;transform:rotate(0deg) translateX(-50%)}
+.cross_browsing_area .memo_wrap .memo p{font-size:14px;color:#000}
+.cross_browsing_area .img_area{margin:0 auto;padding:0 30px;width:800px;border:1px solid #999}
+.cross_browsing_area .link{margin-left:30px;text-decoration:underline}
