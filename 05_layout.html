@@ -107,12 +107,11 @@
               <div class="box right"><span>flex<br>BOX 3</span></div>
             </div>
             <div class="desc">
-              <p>- flex-basis로 box1, box2, box3 아이템에 기본 너비값을 점유하도록 적용하였지만 화면이 줄어들었을 때 box1, box2도 유동적인 너비값을 갖으므로
-                box1, box2에 추가적으로 min-width값을 부여한다.
+              <p>- box 1, box 3은 min-width: 260px로 최소 너비값을 지정하고 box 2는 felx: 1을 적용함으로써 자동으로 너비값을 채울 수 있도록 한다.
               </p>
               <code>
-                .layout_04 .box.left, .layout_04 .box.right { flex-basis: 260px; min-width: 260px }<br>
-                .layout_04 .box.center { flex-basis: 504px; }
+                .layout_04 .box.left, .layout_04 .box.right { min-width: 260px }<br>
+                .layout_04 .box.center { flex: 1 }
               </code>
             </div>
           </li>

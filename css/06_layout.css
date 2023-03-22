@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
 
 /* box_wrap 너비값 재정의 */
+.layout_list_step_06 .layout_02{margin-top:50px}
+.layout_list_step_06 .box{text-align:center}
 .box_wrap{width:100%}
 .desc .img_area{display:inline-block;width:428px}
 .desc .img_area.w_wide{width:790px}

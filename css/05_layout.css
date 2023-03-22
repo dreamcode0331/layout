@@ -44,8 +44,8 @@
 /* 4. flex */
 .layout_04 .box_wrap{display:-ms-flexbox;display:flex}
 .layout_04 .box{height:200px}
-.layout_04 .box.left,.layout_04 .box.right{flex-basis:260px;min-width:260px} 
-.layout_04 .box.center{flex-basis:504px} 
+.layout_04 .box.left,.layout_04 .box.right{min-width:260px} 
+.layout_04 .box.center{flex:1} 
 
 /* 5. grid */
 .layout_05 .box_wrap{display:-ms-grid;display:grid;-ms-grid-columns:260px 1fr 260px;grid-template-columns:260px 1fr 260px;grid-template-areas:"boxleft boxcenter boxright"}

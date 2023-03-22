@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* layout_list_step_01 */
-.layout_list_step_01 .box{height:200px}
+/* .layout_list_step_01 .box{height:200px} */
 
 /* input radio */
 .rdo_area:before{display:block;padding-top:50px;border-top:1px solid #ccc;content:""}
@@ -15,7 +15,7 @@
 .ex_layout .box.right{width:332px}
 
  /* 1. inline-block */
-.layout_01 .box{display:inline-block;}
+.layout_01 .box{display:inline-block;height:200px}
 .layout_01 .box_wrap_01 .box.left{width:340px}
 .layout_01 .box_wrap_01 .box.right{width:684px}
 .layout_01 .box_wrap_02{font-size:0}
@@ -36,7 +36,7 @@
 /* 4. flex */
 .layout_04 .box_wrap{display:flex}
 .layout_04 .box.left{flex-basis:340px}
-.layout_04 .box.right{flex-basis:684px}
+.layout_04 .box.right{flex:1}
 
 /* 5. grid */
 .layout_05 .box_wrap{display:-ms-grid;display:grid;-ms-grid-columns:340px 684px;grid-template-columns:340px 684px;grid-template-areas:"boxleft boxright"}
