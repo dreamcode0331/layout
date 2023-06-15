@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* layout_list_step_01 */
-/* .layout_list_step_01 .box{height:200px} */
 
 /* input radio */
 .rdo_area:before{display:block;padding-top:50px;border-top:1px solid #ccc;content:""}

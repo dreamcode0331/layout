@@ -29,6 +29,8 @@
 
 .working{display:inline-block;margin:0 7px;padding:0 10px;border-radius:25px;background:#380f44;color:#fff}
 
+.layout .box, .layout .box .positioning_box{height:auto}
+
 /* 1. inline-block */
 .layout_01 .box_wrap{font-size:0}
 .layout_01 .box{display:inline-block}
@@ -39,6 +41,7 @@
 /* 2. table */
 .layout_02 .box_wrap{display:table;}
 .layout_02 .box{display:table-cell;}
+.layout_02 .box .positioning_box{height:auto}
 .layout_02 .box.left{width:340px}
 
 /* 3. position */

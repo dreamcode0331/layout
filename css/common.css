@@ -8,7 +8,7 @@ h1{font-size:24px}
 h2{padding:30px 0 5px;text-align:center}
 h3{padding-bottom:15px;font-size:16px}
 .markup{position:relative;padding:64px 0 100px;font-size:16px}
-.markup li a{background:none}
+/* .markup li a{background:none} */
 .markup li span{color:#000}
 table{width:100%}
 table,th,td{padding:5px 10px;line-height:1.5;border: 1px solid #333;font-size:13px}
