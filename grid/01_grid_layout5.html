@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step3 - 라인기반 배치</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step5">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">Grid Layout 뿌시기</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout1.html" class="link">STEP1</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout3.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout4.html" class="link">STEP4</a></li>
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout5.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP7</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container">
+      <h2 class="title">Naming lines when defining a grid (그리드 정의 시, 라인 이름 만들기)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];</span>
+        <span class="element">grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-column-start: main-start;</span>
+        <span class="element">grid-row-start: main-start;</span>
+        <span class="element">grid-row-end: main-end;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-column-start: content-end;</span>
+        <span class="element">grid-row-start: main-start;</span>
+        <span class="element">grid-row-end: content-end;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item3</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-column-start: content-start;</span>
+        <span class="element">grid-row-start: main-start;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item4</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-column-start: content-start;</span>
+        <span class="element">grid-column-end: main-end;</span>
+        <span class="element">grid-row-start: content-end;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex1">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+      </div>
+
+      <h2 class="title">Implicit grid areas from named lines (이름이 주어진 라인으로 만들어지는 잠재적 그리드 영역)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: [main-start] 1fr [content-start] 1fr [content-end] 1fr [main-end];</span>
+        <span class="element">grid-template-rows: [main-start] 100px [content-start] 100px [content-end] 100px [main-end];</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.thing</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: content;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex2">
+        <div class="grid_item thing">I am placed in an area named content.</div>
+      </div>
+
+      <h2 class="title">Implicit grid areas from named lines (이름이 주어진 영역으로 만들어지는 잠재적 그리드 라인)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(9, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="element">grid-template-areas:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd"<br>
+          "sd sd sd main main main main main main"<br>
+          "ft ft ft ft   ft   ft   ft   ft   ft";
+        </span>
+        <span class="braces_close">}</span><br>
+        
+        <span class="class">.grid_header</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: hd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_footer</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: ft;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_content</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: main;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_sidebar</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: sd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.thing</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: content;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex3">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+        <div class="grid_item overlay">Overlay</div>
+      </div>
+
+      <h2 class="title">Multiple lines with the same name with repeat() (repeat()을 써서 같은 이름을 가진 여러 개의 라인 만들기)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element annotation">/* grid-template-columns: 12개의 열로 구성된 그리드, [라인 이름] 열트랙 너비 */</span>
+        <span class="element">grid-template-columns: repeat(12, [col-start] 1fr)</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column:col-start / col-start 5</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column:col-start 7 / span 3<span class="annotation"> /* 7번째 라인부터 3개의 라인에 걸치도록 배치 */</span></span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex4">
+        <div class="grid_item grid_item1">I am placed from col-start line 1 to col-start 5</div>
+        <div class="grid_item grid_item2">I am placed from col-start line 7 spanning 3 lines</div>
+      </div>
+
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(12, [col-start] 1fr);</span>
+        <span class="element">grid-gap: 10px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: col1-start / col2-start 2;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-row: 2;</span>
+        <span class="element">grid-column: col1-start 2 / span 2 col1-start;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex5">
+        <div class="grid_item grid_item1">I am placed from col1-start line 1 to col2-start line 2</div>
+        <div class="grid_item grid_item2">I am placed from col1-start line 2 spanning 2 lines named col1-start</div>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step2 - 다른 레이아웃과 배치 관계</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step2">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">Grid Layout 뿌시기</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout1.html" class="link">STEP1</a></li>
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP7</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container w_650">
+      <h2 class="title">Grid and Flex box</h2>
+      <code>
+        <span class="class">.flex_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: flex;</span>
+        <span class="element">flex-wrap: wrap;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.flex_item</span>
+        <span class="braces_open">{</span> 
+        <span class="element">flex:1 1 150px;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="flex_container flex_ex1">
+        <div class="flex_item">One</div>
+        <div class="flex_item">Two</div>
+        <div class="flex_item">Three</div>
+        <div class="flex_item">Four</div>
+        <div class="flex_item">Five</div>
+      </div>
+
+      <h2 class="title">The same layout with CSS grids (그리드와 동일한 레이아웃)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex1">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+
+      <h2 class="title">Box alignment (박스 정렬)</h2>
+      <code>
+        <span class="class">.flex_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: flex;</span>
+        <span class="element">align-items: flex-end;</span>
+        <span class="element">min-height: 200px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.flex_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">align-self: stretch;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.flex_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">align-self: flex-start;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="flex_container flex_ex2">
+        <div class="flex_item flex_item1">One</div>
+        <div class="flex_item flex_item2">Two</div>
+        <div class="flex_item flex_item3">Three</div>
+      </div>
+
+      <h2 class="title">Alignment in CSS Grids (CSS 그리드 정렬)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">align-items: end;</span>
+        <span class="element">grid-auto-rows: 200px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">align-self: stretch;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">align-self: start;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex2">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+      </div>
+
+      <h2 class="title">The fr unit and flex-basis (fr 단위와 flex-basis)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(auto-fill, 200px);</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex3">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+      </div>
+
+      <h2 class="title">A flexible number of tracks (유연한 트랙 수)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex4">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+      </div>
+
+      <h2 class="title">Grid and absolutely positioned elements (그리드와 절대값 위치 속성)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(4, 1fr);</span>
+        <span class="element">grid-auto-rows: 200px;</span>
+        <span class="element">gap: 20px;</span>
+        <span class="element">position: relative;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_grid_item3</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column-start: 2;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">grid-row-start: 1;</span>
+        <span class="element">grid-row-end: 3;</span>
+        <span class="element">position: absolute;</span>
+        <span class="element">top: 40px;</span>
+        <span class="element">left: 40px;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex5">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">
+          This block is absolutely positioned. In this example the grid container is
+          the containing block and so the absolute positioning offset values are
+          calculated in from the outer edges of the area it has been placed into.
+        </div>
+        <div class="grid_item grid_item4">Four</div>
+      </div>
+
+      <h2 class="title">A grid container as parent (그리드 컨테이너를 부모로 사용)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(4, 1fr);</span>
+        <span class="element">grid-auto-rows: 200px;</span>
+        <span class="element">gap: 20px;</span>
+        <span class="element">position: relative;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_grid_item3</span>
+        <span class="braces_open">{</span>
+        <span class="element">position: absolute;</span>
+        <span class="element">top: 30px;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex6">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">
+          This block is absolutely positioned. In this example the grid container is
+          the containing block and so the absolute positioning offset values are
+          calculated in from the outer edges of the area it has been placed into.
+        </div>
+        <div class="grid_item grid_item4">Four</div>
+      </div>
+
+      <h2 class="title">With a grid area as the parent (그리드 영역를 부모로 사용)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(4, 1fr);</span>
+        <span class="element">grid-auto-rows: 200px;</span>
+        <span class="element">gap: 20px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_grid_item3</span>
+        <span class="braces_open">{</span>
+        <span class="element">grid-column-start: 2;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">grid-row-start: 1;</span>
+        <span class="element">grid-row-end: 3;</span>
+        <span class="element">position: relative;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.abspos</span>
+        <span class="braces_open">{</span>
+          <span class="element">position: absolute;</span>
+        <span class="element">top: 40px;</span>
+        <span class="element">left: 40px;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex7">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three
+          <div class="abspos">
+            This block is absolutely positioned. In this example the grid container is
+            the containing block and so the absolute positioning offset values are
+            calculated in from the outer edges of the area it has been placed into.
+          </div>
+        </div>
+        <div class="grid_item grid_item4">Four</div>
+      </div>
+
+      <h2 class="title">Grid layout with nested child elements (중첩된 자식 요소가 있는 그리드 레이아웃)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto)</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex8">
+        <div class="grid_item grid_item1">
+          <div class="nested">a</div>
+          <div class="nested">b</div>
+          <div class="nested">c</div>
+        </div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+
+      <h2 class="title">Using display: contents (디스플레이 사용 : 컨텐츠)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto)</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">display: contents;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex9">
+        <div class="grid_item grid_item1">
+          <div class="nested">a / 박스를 생성하지는 않지만 내부 내용을 표시</div>
+          <div class="nested">b / 박스를 생성하지는 않지만 내부 내용을 표시</div>
+          <div class="nested">c / 박스를 생성하지는 않지만 내부 내용을 표시</div>
+        </div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>

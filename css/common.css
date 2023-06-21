@@ -20,7 +20,7 @@ th{text-align:center}
 .th_03{width:22%}
 .th_01,.th_02,.th_03,.th_04{background:#cdcdcd;color:#000}
 .inner{margin:50px auto 0;width:100%;max-width:1024px}
-.giscus{margin:0 auto;padding-bottom:100px;max-width:1024px}
+.giscus{margin:0 auto;padding:100px 0;max-width:1024px}
 
 /* input radio */
 .rdo_area{min-width:1024px;margin:40px 0 20px;text-align: center;}

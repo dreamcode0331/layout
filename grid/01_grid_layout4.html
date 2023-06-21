@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step3 - 라인기반 배치</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step4">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">Grid Layout 뿌시기</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout1.html" class="link">STEP1</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout3.html" class="link">STEP3</a></li>
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout4.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP7</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container">
+      <h2 class="title">Naming a grid area (그리드 영역 이름 지정)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(9, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="element">grid-template-areas:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd"<br>
+          "sd sd sd main main main main main main"<br>
+          "ft ft ft ft   ft   ft   ft   ft   ft";
+        </span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_header</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: hd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_footer</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: ft;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_content</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: main;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_sidebar</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: sd;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex1">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+      <span class="img_box"><img src="img/img_grid_step4_01.jpg" alt="그리드 영역 이름 지정"></span>
+
+      <h2 class="title">Leaving a grid cell empty (그리드 셀 비워두기)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(9, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="element">grid-template-areas:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd"<br>
+          "sd sd sd main main main main main main"<br>
+          ".  .  .  ft   ft   ft   ft   ft   ft";
+        </span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_header</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: hd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_footer</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: ft;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_content</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: main;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_sidebar</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: sd;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex2">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+      <span class="img_box"><img src="img/img_grid_step4_02.jpg" alt="그리드 셀 비워두기"></span>
+
+      <h2 class="title">Spanning multiple cells (여러 셀에 걸쳐있는 영역)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(9, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="element">grid-template-areas:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd"<br>
+          "sd sd sd main main main main main main"<br>
+          "sd sd sd  ft   ft   ft   ft   ft   ft";
+        </span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_header</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: hd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_footer</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: ft;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_content</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: main;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_sidebar</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: sd;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex3">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+
+      <h2 class="title">Redefining the grid using media queries (미디어쿼리 사용하여 그리드 재정의)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: 1fr;</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="element">grid-template-areas: "hd" "main" "sd" "ft"</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_header</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: hd;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_footer</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: ft;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_content</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: main;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_sidebar</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: sd;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex4">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+
+      <h2 class="title">Using grid-template-areas for UI elements (grid-template-areas UI 요소에 사용)</h2>
+      <code>
+        <span class="class">.grid_container .media</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: 1fr 3fr;</span>
+        <span class="element">grid-template-areas: "img content";</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_container .media .image</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: img;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_container .media .text</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: content;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex5 media">
+        <div class="image"></div>
+        <div class="text">
+          This is a media object example. We can use grid-template-areas to switch
+          around the image and text part of the media object.
+        </div>
+      </div>
+
+      <h2 class="title">Grid definition shorthands (그리드 정의 줄여쓰기)</h2>
+      <code>
+        <span class="element annotation">
+          /* grid-template 은 다음 속성을 설정한다<br> 
+            - grid-template-rows<br>
+            - grid-template-columns<br>
+            - grid-template-areas<br>
+            <br>
+            - 다음 코드는 grid_ex1 예제의 레이아웃과 동일한 레이아웃을 구성한다.
+          */
+        </span>
+        <span class="class">.grid_container .media</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd" minmax(100px, auto)<br>
+          "sd sd sd main main main main main main" minmax(100px, auto)<br>
+          "ft ft ft ft   ft   ft   ft   ft   ft" minmax(100px, auto)<br>
+          / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        </span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex6">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+      
+      <h2 class="title">암시적 그리드 줄여쓰기</h2>
+      <code>
+        <span class="element annotation">
+          /* grid는 암시적 그리드에서 사용되는 속성도 설정한다<br> 
+            - grid-template-rows<br> 
+            - grid-template-columns<br> 
+            - grid-template-areas<br> 
+            - grid-auto-rows<br> 
+            - grid-auto-columns<br> 
+            - grid-auto-flow<br> 
+            <br>
+            - grid-template 줄여쓰기와 똑같은 방법으로 사용할 수 있지만, 해당 속성에 의해 설정했던 다른 속성값들이 재설정 될 수 있음을 유의.
+          */
+        </span>
+        <span class="class">.grid_container .media</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid:<br>
+          "hd hd hd hd   hd   hd   hd   hd   hd" minmax(100px, auto)<br>
+          "sd sd sd main main main main main main" minmax(100px, auto)<br>
+          "ft ft ft ft   ft   ft   ft   ft   ft" minmax(100px, auto)<br>
+          / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        </span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex7">
+        <div class="grid_item grid_header">Header</div>
+        <div class="grid_item grid_sidebar">Sidebar</div>
+        <div class="grid_item grid_content">Content</div>
+        <div class="grid_item grid_footer">Footer</div>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>

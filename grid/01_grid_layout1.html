@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step1 - 그리드 레이아웃 기본 개념</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step1">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">Grid Layout 뿌시기</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">Grid</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout.html" class="link">STEP7</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container">
+      <h2 class="title">Grid Container (그리드 컨테이너)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex1">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div> 
+      
+      <h2 class="title">Grid Tracks (그리드 트랙)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: 200px 200px 200px;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex2">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+      
+      <h2 class="title">The fr unit (fr 단위)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: 1fr 1fr 1fr;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex3">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div> 
+      
+      <h2 class="title">Unequal sizes (크기가 다른)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: 2fr 1fr 1fr;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex4">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+      
+      <h2 class="title">Mixing flexible and absolute sizes (유동+고정 사이즈)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: 500px 1fr 2fr;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex5">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+      
+      <h2 class="title">Track listings with repeat() notation (reteat(표기법))</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element annotation">/* grid-template-columns: 1fr 1fr 1fr; */</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex6">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+      
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: 20px repeat(6, 1fr) 20px;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex7">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+      
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(5, 1fr, 2fr);</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex8">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div> 
+
+      <h2 class="title">Implicit and explicit grids (암시적/명시적 그리드)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: 200px;</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex9">
+        <div class="grid_item">One</div>
+        <div class="grid_item">Two</div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+
+      <h2 class="title">Track sizing and minmax (트랙 크기 조정 및 최소값)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: minmax(100px, auto);</span>
+        <span class="braces_close">}</span> 
+      </code>
+      <div class="grid_container ex10">
+        <div class="grid_item">One</div>
+        <div class="grid_item">
+          Two
+          <p>I have some more content in. I have some more content in. I have some more content in. I have some more content in. I have some more content in. I have some more content in. I have some more content in.</p>
+          <p>This makes me taller than 100 pixels. This makes me taller than 100 pixels. This makes me taller than 100 pixels. This makes me taller than 100 pixels. This makes me taller than 100 pixels. This makes me taller than 100 pixels.</p>
+        </div>
+        <div class="grid_item">Three</div>
+        <div class="grid_item">Four</div>
+        <div class="grid_item">Five</div>
+      </div>
+
+      <h2 class="title">Grid lines (그리드 라인)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: 100px;</span>
+        <span class="braces_close">}</span><br>
+        
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">grid-row-start: 1;</span>
+        <span class="element">grid-row-end: 3;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-row-start: 3;</span>
+        <span class="element">grid-row-end: 5;</span>
+        <span class="braces_close">}</span><br> 
+      </code>
+      <div class="grid_container ex11">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+
+      <h2 class="title">Line-positioning shorthands (라인 포지셔닝 줄여쓰기)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: 100px;</span>
+        <span class="braces_close">}</span><br>
+        
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1 / 4;</span>
+        <span class="element">grid-row: 1 / 3;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1;</span>
+        <span class="element">grid-row: 3 / 5;</span>
+        <span class="braces_close">}</span><br> 
+      </code>
+      <div class="grid_container ex12">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+
+      <h2 class="title">Gutters (간격)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">column-gap: 10px;</span>
+        <span class="element">row-gap: 1em;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container ex13">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+      
+      <h2 class="title">Nesting grids (중첩 그리드)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">gap: 3px;</span>
+        <span class="braces_close">}</span><br>
+          
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element annotation">/* grid-column-start: 1; */</span>
+        <span class="element annotation">/* grid-column-end: 4; */</span>
+        <span class="element annotation">/* grid-row-start: 1; */</span>
+        <span class="element annotation">/* grid-row-end: 3; */</span>
+        <span class="element ">grid-column: 1/4;</span>
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.nested</span>
+        <span class="braces_open">{</span> 
+        <span class="element">padding: 1em;</span>
+        <span class="element">border: 2px solid #ffec99;</span>
+        <span class="element">border-radius: 5px;</span>
+        <span class="element">background-color: #fff9db;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container ex14">
+        <div class="grid_item grid_item1">
+          <div class="nested">a</div>
+          <div class="nested">b</div>
+          <div class="nested">c</div>
+        </div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+
+      <h2 class="title">Sub grid (서브 그리드)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">gap: 3px;</span>
+        <span class="braces_close">}</span><br>
+          
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span>
+        <span class="element ">grid-column: 1/4;</span>
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: subgrid;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <span class="img_box"><img src="img/can-i-use__sub-grid.PNG" alt="sub grid 지원 브라우저"></span>
+      <div class="grid_container ex15">
+        <div class="grid_item grid_item1">
+          <div class="nested">a</div>
+          <div class="nested">b</div>
+          <div class="nested">c</div>
+        </div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>  
+
+      <h2 class="title">Layering items with z-index</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: 100px;</span>
+        <span class="braces_close">}</span><br>
+          
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span>
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">grid-row-start: 1;</span>
+        <span class="element">grid-row-end: 3;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span>
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-row-start: 2;</span>
+        <span class="element">grid-row-end: 4;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container ex16">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-auto-rows: 100px;</span>
+        <span class="braces_close">}</span><br>
+          
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span>
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-column-end: 4;</span>
+        <span class="element">grid-row-start: 1;</span>
+        <span class="element">grid-row-end: 3;</span>
+        <span class="element">z-index: 1; <span class="annotation">/* 2 로 변경하여 레이어 순서 제어 가능 */</span></span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span>
+        <span class="element">grid-column-start: 1;</span>
+        <span class="element">grid-row-start: 2;</span>
+        <span class="element">grid-row-end: 4;</span>
+        <span class="element">z-index: 1;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container ex17">
+        <div class="grid_item grid_item1">One</div>
+        <div class="grid_item grid_item2">Two</div>
+        <div class="grid_item grid_item3">Three</div>
+        <div class="grid_item grid_item4">Four</div>
+        <div class="grid_item grid_item5">Five</div>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>
