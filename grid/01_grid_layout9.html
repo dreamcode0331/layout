@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step9 - CSS Grid Layout and progressive enhancement</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step9">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">CSS Grid Layout and progressive enhancement</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout1.html" class="link">STEP1</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout3.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout4.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout5.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout6.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout7.html" class="link">STEP7</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout8.html" class="link">STEP8</a></li>
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout9.html" class="link">STEP9</a></li>
+         </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container">
+      <h2 class="title">A solution using feature queries (기능 쿼리를 사용하는 솔루션)</h2>
+      <code>
+        <span class="class">@supports (display: grid)</span>
+        <span class="braces_open">{</span><br> 
+        <span class="class">&nbsp;.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element annotation">&nbsp;/* do anything for grid supporting browsers here. */</span>
+        <span class="braces_close">&nbsp;&nbsp;}</span><br> 
+        <span class="braces_close">}</span>
+      </code>
+      <code>
+        <span class="class">.grid_container ul</span>
+        <span class="braces_open">{</span><br> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">gap: 20px;</span>
+        <span class="element">margin: 0;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_container li</span>
+        <span class="braces_open">{</span><br> 
+        <span class="element">width: auto;</span>
+        <span class="element">min-height: auto;</span>
+        <span class="element">margin: 0;</span>
+        <span class="braces_close">}</span><br><br>
+
+        <span class="class">@supports (display: grid)</span>
+        <span class="braces_open">{</span><br> 
+        <span class="class">&nbsp;.grid_container ul</span>
+        <span class="braces_open">{</span> 
+        <span class="element">&nbsp;display: grid;</span>
+        <span class="element">&nbsp;grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">&nbsp;gap: 20px;</span>
+        <span class="element">&nbsp;margin: 0;</span> 
+        <span class="braces_close">&nbsp;&nbsp;}</span><br> 
+        <span class="class">&nbsp;.grid_container li</span>
+        <span class="braces_open">{</span> 
+        <span class="element">&nbsp;width: auto;</span>
+        <span class="element">&nbsp;min-height: auto;</span>
+        <span class="element">&nbsp;margin: 0;</span> 
+        <span class="braces_close">&nbsp;&nbsp;}</span><br> 
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex1">
+        <ul>
+          <li class="grid_item card">
+            <h2>One</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+          <li class="grid_item card">
+            <h2>Two</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+          <li class="grid_item card">
+            <h2>Three</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+          <li class="grid_item card">
+            <h2>Four</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+          <li class="grid_item card">
+            <h2>Five</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+          <li class="grid_item card">
+            <h2>Six</h2>
+            <p>We can use CSS Grid to overwrite older methods.</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>

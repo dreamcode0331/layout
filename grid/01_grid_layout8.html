@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Step8 - Grid layout and accessibility</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/grid_layout.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- WRAP -->
+  <div class="wrap step9">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="blind">Grid layout and accessibility</h1>
+      <nav class="gnb">
+        <h2 class="blind">메뉴</h2>
+        <ul class="menu_list">
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout1.html" class="link">STEP1</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout2.html" class="link">STEP2</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout3.html" class="link">STEP3</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout4.html" class="link">STEP4</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout5.html" class="link">STEP5</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout6.html" class="link">STEP6</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout7.html" class="link">STEP7</a></li>
+          <li class="menu is_active"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout8.html" class="link">STEP8</a></li>
+          <li class="menu"><a href="https://dreamcode0331.github.io/layout/grid/01_grid_layout9.html" class="link">STEP9</a></li>
+         </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+    <!-- CONTENTS -->
+    <main class="container">
+      <h2 class="title"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode" class="link external" target="_blank">writing-mode</a></h2>
+      <ul class="list">
+        <li class="list_item"><code class="one_line_code">horizontal-tb</code></li>
+        <li class="list_item"><code class="one_line_code">vertical-rl</code></li>
+        <li class="list_item"><code class="one_line_code">vertical-lr</code></li>
+        <li class="list_item"><code class="one_line_code">sideways-rl</code></li>
+        <li class="list_item"><code class="one_line_code">sideways-lr</code></li>
+      </ul>
+      <code>
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-area: a;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="wrapper">
+        <p style="writing-mode: horizontal-tb">
+          I have writing mode set to the default <code class="one_line_code">horizontal-tb</code>
+        </p>
+        <p style="writing-mode: vertical-rl">
+          I have writing mode set to <code class="one_line_code">vertical-rl</code>
+        </p>
+      </div>
+
+      <h2 class="title">Writing modes in grid layouts</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">writing-mode: vertical-lr;</span>
+        <span class="element">grid-template-columns: repeat(3, 100px);</span>
+        <span class="element">grid-template-rows: repeat(2, 100px);</span>
+        <span class="element">gap: 10px;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex1">
+        <div class="grid_item grid_item1">Item 1</div>
+        <div class="grid_item grid_item2">Item 2</div>
+        <div class="grid_item grid_item3">Item 3</div>
+        <div class="grid_item grid_item4">Item 4</div>
+        <div class="grid_item grid_item5">Item 5</div>
+      </div>
+
+      <h2 class="title">Logical values for alignment (정렬을 위한 논리값)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">writing-mode: vertical-lr;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-template-rows: repeat(3, 100px);</span>
+        <span class="element">gap: 10px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1 / 4;</span>
+        <span class="element">align-self: start;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1 / 3;</span>
+        <span class="element">grid-row: 2 / 4;</span>
+        <span class="element">align-self: start;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item3</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 3;</span>
+        <span class="element">grid-row: 2 / 4;</span>
+        <span class="element">align-self: end;</span>
+        <span class="element">justify-self: end;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex2">
+        <div class="grid_item grid_item1">Item 1</div>
+        <div class="grid_item grid_item2">Item 2</div>
+        <div class="grid_item grid_item3">Item 3</div>
+      </div>
+
+      <h2 class="title">Line-based placement with left to right text (왼쪽에서 오른쪽으로 텍스트가 있는 라인 기반 배치)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-template-rows: repeat(2, 100px);</span>
+        <span class="element">gap: 10px;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: -1 / -3;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item3</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1 / 3;</span>
+        <span class="element">grid-row: 2;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex3">
+        <div class="grid_item grid_item1">Item 1</div>
+        <div class="grid_item grid_item2">Item 2</div>
+        <div class="grid_item grid_item3">Item 3</div>
+      </div>
+
+      <h2 class="title">Line-based placement with right to left text (오른쪽에서 왼쪽으로 텍스트가 있는 라인 기반 배치)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: repeat(3, 1fr);</span>
+        <span class="element">grid-template-rows: repeat(2, 100px);</span>
+        <span class="element">gap: 10px;</span>
+        <span class="element">direction: rtl;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item1</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item2</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: -1 / -3;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_item3</span>
+        <span class="braces_open">{</span> 
+        <span class="element">grid-column: 1 / 3;</span>
+        <span class="element">grid-row: 2;</span>
+        <span class="braces_close">}</span><br>
+      </code>
+      <div class="grid_container grid_ex4">
+        <div class="grid_item grid_item1">Item 1</div>
+        <div class="grid_item grid_item2">Item 2</div>
+        <div class="grid_item grid_item3">Item 3</div>
+      </div>
+
+      <h2 class="title">Mixed writing modes and grid layout (혼합 쓰기 모드 및 그리드 레이아웃)</h2>
+      <code>
+        <span class="class">.grid_container</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: grid;</span>
+        <span class="element">grid-template-columns: 1fr auto;</span>
+        <span class="element">gap: 20px;</span>
+        <span class="element">font: 1em Helvetica, Arial, sans-serif;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_container nav</span>
+        <span class="braces_open">{</span> 
+        <span class="element">writing-mode: vertical-lr;</span>
+        <span class="braces_close">}</span><br>
+
+        <span class="class">.grid_container ul</span>
+        <span class="braces_open">{</span> 
+        <span class="element">display: flex;</span>
+        <span class="element">justify-content: space-between;</span>
+        <span class="element">margin: 0;</span>
+        <span class="element">padding: 1em;</span>
+        <span class="element">list-style: none;</span>
+        <span class="braces_close">}</span>
+      </code>
+      <div class="grid_container grid_ex5">
+        <div class="content">
+          <p>
+            Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce
+            kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus
+            winter purslane kale. Celery potato scallion desert raisin horseradish
+            spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo
+            shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.
+            Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi
+            beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki
+            bean chickweed potato bell pepper artichoke.
+          </p>
+          <p>
+            Nori grape silver beet broccoli kombu beet greens fava bean potato
+            quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil
+            turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter
+            purslane fennel azuki bean earthnut pea sierra leone bologi leek soko
+            chicory celtuce parsley jícama salsify.
+          </p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <!-- // CONTENTS -->
+  </div>    
+  <!-- // WRAP -->
+  <!-- GISCUS -->
+  <script src="https://giscus.app/client.js"
+    data-repo="dreamcode0331/layout"
+    data-repo-id="R_kgDOJHPWbA"
+    data-category="General"
+    data-category-id="DIC_kwDOJHPWbM4CUwD-"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- // GISCUS -->
+</body>
+</html>
