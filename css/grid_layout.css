@@ -210,6 +210,49 @@ code .annotation{color:#11ad11}
 .wrap.step6 .grid_container.grid_ex10 dt{grid-column:1;font-weight:bold}
 .wrap.step6 .grid_container.grid_ex10 dd{grid-column:2;margin-inline-start:40px}
 
+/* STEP 7 */
+.wrap.step7 .grid_container.grid_ex1{grid-template-columns:repeat(8,1fr);gap:10px;grid-auto-rows:100px;align-items:start;grid-template-areas:"a a a a b b b b" "a a a a b b b b" "c c c c d d d d" "c c c c d d d d"}
+.wrap.step7 .grid_container.grid_ex1 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex1 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex1 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex1 .grid_item4{grid-area:d}
+.wrap.step7 .grid_container.grid_ex2{grid-template-columns:repeat(8,1fr);gap:10px;grid-auto-rows:100px;grid-template-areas:"a a a a b b b b" "a a a a b b b b" "c c c c d d d d" "c c c c d d d d"}
+.wrap.step7 .grid_container.grid_ex2 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex2 .grid_item2{grid-area:b;align-self:start}
+.wrap.step7 .grid_container.grid_ex2 .grid_item3{grid-area:c;align-self:end}
+.wrap.step7 .grid_container.grid_ex2 .grid_item4{grid-area:d;align-self:center}
+.wrap.step7 .grid_container.grid_ex3{grid-template-columns:repeat(8,1fr);gap:10px;grid-auto-rows:100px;grid-template-areas:"a a a a b b b b" "a a a a b b b b" "c c c c d d d d" "c c c c d d d d"}
+.wrap.step7 .grid_container.grid_ex3 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex3 .grid_item2{grid-area:b;justify-self:start}
+.wrap.step7 .grid_container.grid_ex3 .grid_item3{grid-area:c;justify-self:end}
+.wrap.step7 .grid_container.grid_ex3 .grid_item4{grid-area:d;justify-self:center}
+.wrap.step7 .grid_container.grid_ex4{grid-template-columns:repeat(4,1fr);gap:10px;grid-auto-rows:200px;grid-template-areas:". a a ." ". a a ."}
+.wrap.step7 .grid_container.grid_ex4 .grid_item1{grid-area:a;align-self:center;justify-self:center}
+.wrap.step7 .grid_container.grid_ex5{grid-template-columns:repeat(3,100px);grid-template-rows:repeat(3,100px);gap:10px;grid-template-areas:"a a b" "a a b" "c d d";width:500px;height:500px;}
+.wrap.step7 .grid_container.grid_ex5 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex5 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex5 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex5 .grid_item4{grid-area:d}
+.wrap.step7 .grid_container.grid_ex6{grid-template-columns:repeat(3,100px);grid-template-rows:repeat(3,100px);gap:10px;grid-template-areas:"a a b" "a a b" "c d d";align-content:end;width:500px;height:500px;}
+.wrap.step7 .grid_container.grid_ex6 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex6 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex6 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex6 .grid_item4{grid-area:d}
+.wrap.step7 .grid_container.grid_ex7{grid-template-columns:repeat(3,100px);grid-template-rows:repeat(3,100px);gap:10px;grid-template-areas:"a a b" "a a b" "c d d";align-content:space-between;width:500px;height:500px;}
+.wrap.step7 .grid_container.grid_ex7 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex7 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex7 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex7 .grid_item4{grid-area:d}
+.wrap.step7 .grid_container.grid_ex8{grid-template-columns:repeat(3,100px);grid-template-rows:repeat(3,100px);gap:10px;grid-template-areas:"a a b" "a a b" "c d d";align-content:space-between;justify-content:space-around;width:500px;height:500px;}
+.wrap.step7 .grid_container.grid_ex8 .grid_item1{grid-area:a}
+.wrap.step7 .grid_container.grid_ex8 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex8 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex8 .grid_item4{grid-area:d}
+.wrap.step7 .grid_container.grid_ex9{grid-template-columns:repeat(3,100px);grid-template-rows:repeat(3,100px);gap:10px;grid-template-areas:"a a b" "a a b" "c d d";width:500px;height:500px;}
+.wrap.step7 .grid_container.grid_ex9 .grid_item1{grid-area:a;margin-left:auto}
+.wrap.step7 .grid_container.grid_ex9 .grid_item2{grid-area:b}
+.wrap.step7 .grid_container.grid_ex9 .grid_item3{grid-area:c}
+.wrap.step7 .grid_container.grid_ex9 .grid_item4{grid-area:d}
 
   /* Media Qeury */
   @media (min-width: 500px) {
